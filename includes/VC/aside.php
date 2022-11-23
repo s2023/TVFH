@@ -42,7 +42,7 @@
                 </div>
                 <!-- FutureGoogleAd -->
                 <div class="shipping text-center">
-                  <img src="images/home/shipping.jpg" alt="Publicidad" title="Futura Publicidad Google">
+                  <img src="resources/images/shipping.jpg" alt="Publicidad" title="Futura Publicidad Google">
                 </div><br><br>
               </div>
             </div>
