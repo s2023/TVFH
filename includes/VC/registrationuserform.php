@@ -393,18 +393,6 @@
                     <input type="text" placeholder="Apellidos de Envío" title="Apellidos de Envío" maxlength="50"
                       required>
 
-                    <!-- Data Shipping Address -->
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="d-flex">                            
-                          <i style="margin-right: 10px" class="fa-solid fa-address-card" title="Dirección de Envío"></i>
-                          <h6>Dirección de Envío</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <input type="text" placeholder="Dirección de Envío" title="Dirección de Envío" maxlength="60"
-                      required>
-
                     <!-- Data Shipping Phone -->
                     <div class="row">
                       <div class="col-12">
@@ -418,6 +406,18 @@
                     <input type="tel" placeholder="Teléfono de Envío"
                       title="Teléfono de Envío."
                       minlength="5" maxlength="20" required>
+
+                    <!-- Data Shipping Address -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="d-flex">                            
+                          <i style="margin-right: 10px" class="fa-solid fa-address-card" title="Dirección de Envío"></i>
+                          <h6>Dirección de Envío</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="text" placeholder="Dirección de Envío" title="Dirección de Envío" maxlength="60"
+                      required>
 
                     <!-- Data Shipping Country -->
                     <div class="row">
