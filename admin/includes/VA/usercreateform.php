@@ -221,7 +221,7 @@
                         <div class="col-12">
                           <div class="d-flex">
                             <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta"></i>
-                            <h6>Fecha de Alta</h6>
+                            <h6>Fecha de Alta del Usuario</h6>
                           </div>
                         </div>
                       </div>
@@ -233,7 +233,7 @@
                         <div class="col-12">
                           <div class="d-flex">
                             <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja"></i>
-                            <h6>Fecha de Baja</h6>
+                            <h6>Fecha de Baja del Usuario</h6>
                           </div>
                         </div>
                       </div>
