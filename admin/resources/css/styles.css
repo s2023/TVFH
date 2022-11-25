@@ -17,7 +17,7 @@
   --bs-pink: #d63384;
   --bs-red: #dc3535;
   --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
+  --bs-yellow: #ffee07;
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
@@ -11866,6 +11866,35 @@ border-color: #1cc88a;
   float: left;
   margin-right: 10px;
 }
+
+/* Aviso Borrador */
+.advisedraft {
+  width: 80%;
+  text-align: center;
+  background: none repeat scroll 0 0 #f0eaa0;
+  color: #e7d800;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 25px;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  border-style: solid;
+  border-radius: 30px;
+}
+
+.advisedraft img{
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 10px;
+}
+
+
+
+
 
 /* Aviso actualización */
 .avisoact {

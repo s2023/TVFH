@@ -1,21 +1,17 @@
-      <!-- Start Main Create Product -->
+      <!-- Start Main Create Category -->
       <main>
         
         <div class="container-fluid px-4">
 
           <!-- Main Title -->
-          <h1 class="mt-4">Crear Producto</h1>
+          <h1 class="mt-4">Crear Categoría</h1>
           
           <!-- Breadcrumb -->
           <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php" title="Inicio">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="productslist.php" title="Inicio">Listar Producto</a></li>
-            <li class="breadcrumb-item active">Crear Producto</li>
+            <li class="breadcrumb-item"><a href="categorieslist.php" title="Inicio">Listar Categorías</a></li>
+            <li class="breadcrumb-item active">Crear Categoría</li>
           </ol>
-
-          <!-- Start Advise Draft -->
-          <?php include_once 'includes/VA/advisedraft.php'?>
-          <!-- End Advise Draft -->
 
           <!-- Start Advise OK  -->
           <?php include_once 'includes/VA/adviseok.php'?>
@@ -25,11 +21,11 @@
           <?php include_once 'includes/VA/adviseerror.php'?>
           <!-- End Advise Error Article-->
 
-          <!-- Start Product Create Form -->
-          <?php include_once 'includes/VA/productcreateform.php'?>
-          <!-- End Product Create Form -->
+          <!-- Start Category Create Form -->
+          <?php include_once 'includes/VA/categorycreateform.php'?>
+          <!-- End Category Create Form -->
 
         </div>
         
       </main>
-      <!-- End Main Create Product -->
+      <!-- End Main Create Category -->
