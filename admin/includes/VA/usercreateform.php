@@ -198,7 +198,7 @@
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-user-check" title="Estado del Usuario"></i>
+                            <i style="margin-right: 10px" class="fas fa-check-circle" title="Estado del Usuario"></i>
                             <h6>Estado del Usuario</h6>
                           </div>
                         </div>

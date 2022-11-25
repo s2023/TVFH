@@ -1,4 +1,4 @@
-          <!-- Start Product Create Form -->
+          <!-- Start Product Edit Form -->
           <form action="#">
 
             <!-- Buttons Form -->
@@ -70,7 +70,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="Nombres del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" required>
+                        <input type="text" placeholder="Nombres del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" value="Nombres del Producto" required>
 
                         <!-- Data Product Category -->
                         <div class="row mt-3">
@@ -82,9 +82,9 @@
                           </div>
                         </div>
                         <select title="Categoría a la cual pertenece el producto registrado en la tienda." required>
-                          <option >
+                          <!-- <option >
                             -- Categoría del Producto --
-                          </option>
+                          </option> -->
                           <option title="Bautizo">
                             <span>
                               Bautizo
@@ -143,7 +143,7 @@
                         </div>
                         <input type="text" placeholder="SKU (Stock Keeping Unit)"
                           title="SKU (Stock Keeping Unit) Unidad de mantenimiento de stock. Código referencia de inventario del producto que maneja la empresa internamente."
-                          maxlength="20">
+                          maxlength="20" value="0000000001">
 
                       </div>
 
@@ -159,7 +159,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="$" title="Valor unitario del producto registrado en la tienda." maxlength="12"
+                        <input type="text" placeholder="$" title="Valor unitario del producto registrado en la tienda." maxlength="12" value="$999.999"
                           required>
 
                         <!-- Data Product Description Short -->
@@ -172,7 +172,7 @@
                             </div>
                           </div>
                         </div>
-                        <textarea type="text" placeholder="Descripción corta del Producto" title="Descripción corta del producto registrado en la tienda." rows="4" maxlength="255"></textarea>
+                        <textarea type="text" placeholder="Descripción corta del Producto" title="Descripción corta del producto registrado en la tienda." rows="4" maxlength="255" value="Descripción corta del Producto"></textarea>
                         
                         <!-- Data Product Description Long -->
                         <div class="row mt-3">
@@ -184,7 +184,7 @@
                             </div>
                           </div>
                         </div>
-                        <textarea type="text" placeholder="Descripción larga del Producto" title="Descripción larga del producto registrado en la tienda." rows="4" maxlength="2000"></textarea>
+                        <textarea type="text" placeholder="Descripción larga del Producto" title="Descripción larga del producto registrado en la tienda." rows="4" maxlength="2000" value="Descripción larga del Producto"></textarea>
 
                       </div>
 
@@ -218,6 +218,11 @@
                         <option title="Borrador">
                           <span>
                           Borrador
+                          </span>
+                        </option>
+                        <option title="Eliminado">
+                          <span>
+                          Eliminado
                           </span>
                         </option>
                       </select>
@@ -278,7 +283,7 @@
                           </div>
                         </div>
                       </div>
-                      <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda.">
+                      <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda." value="">
 
                     </div>
                   </div>
@@ -289,4 +294,4 @@
             </div>
 
           </form>
-          <!-- End Product Create Form -->
+          <!-- End Product Edit Form -->
