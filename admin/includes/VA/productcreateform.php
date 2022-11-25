@@ -1,4 +1,4 @@
-          <!-- Start User Create Form -->
+          <!-- Start Product Create Form -->
           <form action="#">
 
             <!-- Buttons Form -->
@@ -27,120 +27,137 @@
             <div class="card mb-4 p-5">
               <div class="shopper-informations">
 
-                <!-- Row 1 Form User Admin Inputs -->
+                <!-- Row 1 Form Product Inputs -->
                 <div class="row mb-5">
 
-                  <!-- Data User 1-->
+                  <!-- Data Product 1-->
                   <div class="col-sm-8">
                     <div class="bill-to">
 
-                      <!-- Data User Title-->
+                      <!-- Data Product Title-->
                       <h5>
                         Datos del Producto
                       </h5><br>
 
-                      <!-- Data User 1 Column 1 -->
+                      <!-- Data Product 1 Column 1 -->
                       <div class="form-one">
 
-                        <!-- Data User ID -->
+                        <!-- Data Product ID -->
                         <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fas fa-id-badge" title="ID del Producto"></i>
+                              <i style="margin-right: 10px" class="fas fa-shield-alt" title="ID del Producto"></i>
                               <h6>ID del Producto</h6>
                             </div>
                           </div>
                         </div>
                         <input type="text" placeholder="9999999999"
-                          title="ID del Producto. Identificador único del producto registrado en la tienda." minlength="4"
+                          title="ID del Producto. Identificador único del producto registrado en la tienda."
                           maxlength="10" required disabled>
 
-                        <!-- Data User Names -->
+                        <!-- Data Product Name -->
                         <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-user" title="Nombres del Usuario"></i>
-                              <h6>Nombres del Usuario</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-user" title="Nombre del Producto"></i>
+                              <h6>Nombre del Producto</h6>
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="Nombres del Usuario" title="Nombres del usuario registrado en la tienda." maxlength="50" required>
+                        <input type="text" placeholder="Nombres del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" required>
 
-                        <!-- Data User Document Type -->
-                        <div class="row mt-2">
+                        <!-- Data Product Category -->
+                        <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-id-card" title="Tipo de Documento del Usuario"></i>
-                              <h6>Tipo de Documento del Usuario</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-id-card" title="Categoría del Producto"></i>
+                              <h6>Categoría del Producto</h6>
                             </div>
                           </div>
                         </div>
-                        <select title="Tipo de documento de identidad del usuario registrado en la tienda." required>
+                        <select title="Categoría a la cual pertenece el producto registrado en la tienda." required>
                           <option >
-                            -- Tipo de Documento del Usuario --
+                            -- Categoría del Producto --
                           </option>
-                          <option title="Cédula de Ciudadanía">
+                          <option title="Bautizo">
                             <span>
-                              CC - Cédula de Ciudadanía
+                              Bautizo
                             </span>
                           </option>
-                          <option title="NIT - Número de Identificación Tributaria">
+                          <option title="Bouquet">
                             <span>
-                              NIT - Número de Identificación Tributaria
+                            Bouquet
                             </span>
                           </option>
-                          <option title="TI - Tarjeta de Identidad">
+                          <option title="Cajas de Rosas">
                             <span>
-                              TI - Tarjeta de Identidad
+                              Cajas de Rosas
+                            </span>
+                          </option>
+                          <option title="Diseños Especiales">
+                            <span>
+                              Diseños Especiales
+                            </span>
+                          </option>                          
+                          <option title="Ekibanas (Ramos pequeños)">
+                            <span>
+                              Ekibanas (Ramos pequeños)
+                            </span>
+                          </option>                          
+                          <option title="Funeral">
+                            <span>
+                              Funeral
+                            </span>
+                          </option>                          
+                          <option title="Matrimonio">
+                            <span>
+                              Matrimonio
+                            </span>
+                          </option>
+                          <option title="Primera Comunión">
+                            <span>
+                              Primera Comunión
+                            </span>
+                          </option>
+                          <option title="Ramos Fruteros">
+                            <span>
+                              Ramos Fruteros
                             </span>
                           </option>
                         </select>
 
-                        <!-- Data User Nickname -->
+                        <!-- Data Product SKU (Stock Keeping Unit) -->
                         <div class="row mt-4">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-user-lock" title="Nombre de Usuario (Apodo)"></i>
-                              <h6>Nombre de Usuario (Apodo)</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-user-lock" title="SKU del Producto"></i>
+                              <h6>SKU del Producto</h6>
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="apodoUsuario"
-                          title="Nombre de Usuario (Apodo). Máximo 10 carácteres. Nombre de usuario único que se crea con la cuenta para la tienda. El nombre de usuario es único, irrepetible y no se podrá modificar más adelante."
-                          minlength="4" maxlength="10" required>
+                        <input type="text" placeholder="SKU (Stock Keeping Unit)"
+                          title="SKU (Stock Keeping Unit) Unidad de mantenimiento de stock. Código referencia de inventario del producto que maneja la empresa internamente."
+                          maxlength="20">
 
                       </div>
 
-                      <!-- Data User 1 Column 2 -->
+                      <!-- Data Product 1 Column 2 -->
                       <div class="form-two">
 
-                        <!-- Data User Last Names -->
-                        <div class="row mt-2">
+                        <!-- Data Product Unit Value (Capturar $) -->
+                        <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-user" title="Apellidos del Usuario"></i>
-                              <h6>Apellidos del Usuario</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-user" title="Valor unitario del Producto"></i>
+                              <h6>Valor unitario del Producto</h6>
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="Apellidos del Usuario" title="Apellidos del Usuario registrado en la tienda." maxlength="50"
+                        <input type="text" placeholder="$" title="Valor unitario del producto registrado en la tienda." maxlength="12"
                           required>
 
-                        <!-- Data User Document Number -->
-                        <div class="row mt-4">
-                          <div class="col-12">
-                            <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-hashtag"
-                                title="Número de Documento del Usuario"></i>
-                              <h6>Número de Documento del Usuario</h6>
-                            </div>
-                          </div>
-                        </div>
-                        <input type="text" placeholder="Número de Documento del Usuario" title="Número de Documento del Usuario registrado en la tienda."
-                          minlength="5" maxlength="30" required>
-
                         <!-- Data Product Description Short -->
-                        <div class="row mt-4">
+                        <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
                               <i style="margin-right: 10px" class="fa-solid fa-hashtag"
@@ -152,7 +169,7 @@
                         <textarea type="text" placeholder="Descripción corta del Producto" title="Descripción corta del producto registrado en la tienda." rows="4" maxlength="255"></textarea>
                         
                         <!-- Data Product Description Long -->
-                        <div class="row mt-4">
+                        <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
                               <i style="margin-right: 10px" class="fa-solid fa-hashtag"
@@ -161,40 +178,18 @@
                             </div>
                           </div>
                         </div>
-                        <textarea type="text" placeholder="Descripción corta del Producto" title="Descripción larga del producto registrado en la tienda." width="100%" rows="4" maxlength="255"></textarea>
+                        <textarea type="text" placeholder="Descripción larga del Producto" title="Descripción larga del producto registrado en la tienda." rows="4" maxlength="2000"></textarea>
 
                       </div>
 
                     </div>
                   </div>
 
-                  <!-- Data User 2-->
+                  <!-- Data Product 2-->
                   <div class="col-sm-3 ce-inforight">
-                    <div class="bill-to"><br>
+                    <div class="bill-to"><br><br>
 
-                      <!-- Data User Type -->
-                      <div class="row mt-5">
-                        <div class="col-12">
-                          <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-user-tag" title="Tipo de Usuario"></i>
-                            <h6>Tipo de Usuario</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <select title="Tipo de Usuario del sistema: Cliente o Administrador." required>
-                        <option title="Administrador">
-                          <span>
-                            Administrador
-                          </span>
-                        </option>
-                        <option title="Cliente">
-                          <span>
-                            Cliente
-                          </span>
-                        </option>
-                      </select>
-
-                      <!-- Data User State -->
+                      <!-- Data Product State -->
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
@@ -203,7 +198,7 @@
                           </div>
                         </div>
                       </div>
-                      <select title="Estado actual del usuario: Activado, Desactivado, Eliminado." required>
+                      <select title="Estado del producto registrado en la tienda: Activado, Desactivado, Borrador o Eliminado." required>
                         <option title="Activado">
                           <span>
                           Activado
@@ -214,31 +209,75 @@
                           Desactivado
                           </span>
                         </option>
+                        <option title="Borrador">
+                          <span>
+                          Borrador
+                          </span>
+                        </option>
+                        <option title="Eliminado">
+                          <span>
+                          Eliminado
+                          </span>
+                        </option>
                       </select>
 
-                      <!-- Form User Date High -->
+                      <!-- Data Product Visibility -->
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta"></i>
-                            <h6>Fecha de Alta</h6>
+                            <i style="margin-right: 10px" class="fas fa-user-check" title="Visibilidad del Usuario"></i>
+                            <h6>Visibilidad del Usuario</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <select title="Visibilidad del producto en la tienda: Público o Privado." required>
+                        <option title="Activado">
+                          <span>
+                          Público
+                          </span>
+                        </option>
+                        <option title="Desactivado">
+                          <span>
+                          Privado
+                          </span>
+                        </option>
+                      </select>
+
+                      <!-- Form Product Date High -->
+                      <div class="row mt-4">
+                        <div class="col-12">
+                          <div class="d-flex">
+                            <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta del Producto"></i>
+                            <h6>Fecha de Alta del Producto</h6>
                           </div>
                         </div>
                       </div>
                       <!-- Falta Configurar horafecha -->
-                      <input type="date" id="datehigh" name="fechaentrega" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de registro del usuario registrado en la tienda." required disabled>
+                      <input type="date" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de registro del producto registrado en la tienda." required disabled>
 
-                      <!-- Form User Date Low -->
+                      <!-- Form Product Date Low -->
                       <div class="row mt-3">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja"></i>
-                            <h6>Fecha de Baja</h6>
+                            <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja del Producto"></i>
+                            <h6>Fecha de Baja del Producto</h6>
                           </div>
                         </div>
                       </div>
                       <!-- Falta Configurar horafecha -->
-                      <input type="datetime-local" id="datelow" name="fechaentrega" placeholder="" title="Fecha de eliminación del usuario registrado en la tienda." required disabled>
+                      <input type="datetime-local" placeholder="" title="Fecha de eliminación del producto registrado en la tienda." required disabled>
+
+                      <!-- Data Product Image -->
+                      <div class="row mt-3">
+                        <div class="col-12">
+                          <div class="d-flex">
+                            <i style="margin-right: 10px" class="fa-solid fa-hashtag"
+                              title="Imagen del Producto"></i>
+                            <h6>Imagen del Producto</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda.">
 
                     </div>
                   </div>
@@ -249,4 +288,4 @@
             </div>
 
           </form>
-          <!-- End User Create Form -->
+          <!-- End Product Create Form -->

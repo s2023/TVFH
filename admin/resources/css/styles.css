@@ -392,6 +392,7 @@ button:not(:disabled),
 
 textarea {
   resize: vertical;
+  width: 100%;
 }
 
 fieldset {
@@ -11885,6 +11886,7 @@ border-color: #1cc88a;
 .form-two > form > select, 
 .form-two > form > input,
 .form-two > input, 
+.form-two > textarea,
 .form-one > form > input,
 .form-one > input,
 .bill-to > input {
@@ -11904,6 +11906,7 @@ border-color: #1cc88a;
   margin-left: 5%
 }
 
+/* usar???? */
 .user_info input, select  {
   background: #F0F0E9;
   border:0;

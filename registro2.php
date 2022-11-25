@@ -62,7 +62,7 @@
           <h6 class="mb-5">¡Registro de Usuario exitoso!</h6>
             <p>
             Solo falta un paso para poder usar nuestra tienda: Por favor revise su correo electrónico registrado como usuario, se le acaba de enviar un mensaje con un link para que pueda activar su cuenta de usuario en nuestra tienda virtual Florideas Holanda (Si no aparece en la Bandeja de Entrada, revisar carpeta de spam o correo no deseado).<br>
-            Al hacer click en el enlace que le llegue, lo redireccionará de nuevo a nuestra tienda para que pueda a empezar productos.<br>
+            Al hacer click en el enlace que le llegue, lo redireccionará de nuevo a nuestra tienda para que pueda a empezar a comprar productos.<br>
             Muchas gracias por utilizar nuestro servicio.
             </p>
           </div>

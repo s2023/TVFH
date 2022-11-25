@@ -46,7 +46,7 @@
                         <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fas fa-id-badge" title="ID del Usuario"></i>
+                              <i style="margin-right: 10px" class="fas fa-shield-alt" title="ID del Usuario"></i>
                               <h6>ID del Usuario</h6>
                             </div>
                           </div>
@@ -226,7 +226,7 @@
                         </div>
                       </div>
                       <!-- Falta Configurar horafecha -->
-                      <input type="date" id="datehigh" name="fechaentrega" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de registro del usuario registrado en la tienda." required disabled>
+                      <input type="date" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de registro del usuario registrado en la tienda." required disabled>
 
                       <!-- Form User Date Low -->
                       <div class="row mt-3">
@@ -238,7 +238,7 @@
                         </div>
                       </div>
                       <!-- Falta Configurar horafecha -->
-                      <input type="datetime-local" id="datelow" name="fechaentrega" placeholder="" title="Fecha de eliminación del usuario registrado en la tienda." required disabled>
+                      <input type="datetime-local" placeholder="" title="Fecha de eliminación del usuario registrado en la tienda." required disabled>
 
                     </div>
                   </div>
