@@ -58,7 +58,7 @@
                           </div>
                         </div>
                         <input type="text" placeholder="9999999999"
-                          title="ID del Producto. Identificador único del producto registrado en la tienda."
+                          title="Identificador único del producto registrado en la tienda."
                           maxlength="10" required disabled>
 
                         <!-- Data Product Name -->
@@ -70,7 +70,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="Nombres del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" required>
+                        <input type="text" placeholder="Nombre del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" required>
 
                         <!-- Data Product Category -->
                         <div class="row mt-3">
@@ -145,11 +145,6 @@
                           title="SKU (Stock Keeping Unit) Unidad de mantenimiento de stock. Código referencia de inventario del producto que maneja la empresa internamente."
                           maxlength="20">
 
-                      </div>
-
-                      <!-- Data Product 1 Column 2 -->
-                      <div class="form-two">
-
                         <!-- Data Product Unit Value (Capturar $) -->
                         <div class="row mt-3">
                           <div class="col-12">
@@ -162,11 +157,16 @@
                         <input type="text" placeholder="$" title="Valor unitario del producto registrado en la tienda." maxlength="12"
                           required>
 
+                      </div>
+
+                      <!-- Data Product 1 Column 2 -->
+                      <div class="form-two">
+
                         <!-- Data Product Description Short -->
                         <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fas fa-file-alt"
+                              <i style="margin-right: 10px" class="fas fa-info-circle"
                                 title="Descripción corta del Producto"></i>
                               <h6>Descripción corta del Producto</h6>
                             </div>
@@ -178,13 +178,25 @@
                         <div class="row mt-3">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fas fa-file-alt"
+                              <i style="margin-right: 10px" class="fas fa-info-circle"
                                 title="Descripción larga del Producto"></i>
                               <h6>Descripción larga del Producto</h6>
                             </div>
                           </div>
                         </div>
                         <textarea type="text" placeholder="Descripción larga del Producto" title="Descripción larga del producto registrado en la tienda." rows="4" maxlength="2000"></textarea>
+
+                        <!-- Data Product Image -->
+                        <div class="row mt-3">
+                          <div class="col-12">
+                            <div class="d-flex">
+                              <i style="margin-right: 10px" class="fas fa-image"
+                                title="Imagen del Producto"></i>
+                              <h6>Imagen del Producto</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda.">
 
                       </div>
 
@@ -267,18 +279,6 @@
                       </div>
                       <!-- Falta Configurar horafecha -->
                       <input type="datetime-local" placeholder="" title="Fecha de eliminación del producto registrado en la tienda." required disabled>
-
-                      <!-- Data Product Image -->
-                      <div class="row mt-3">
-                        <div class="col-12">
-                          <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-image"
-                              title="Imagen del Producto"></i>
-                            <h6>Imagen del Producto</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda.">
 
                     </div>
                   </div>

@@ -11742,6 +11742,7 @@ body {
 }
 
 
+
 /* Aviso Cambio Contraseña OK */
 .register-req1 {
   width: 80%;
@@ -11767,6 +11768,7 @@ body {
 }
 
 
+
 /* Colores cards Home */
 .bg-users {
   --bs-bg-opacity: 1;
@@ -11782,6 +11784,7 @@ body {
   --bs-bg-opacity: 1;
   background-color: #6f42c1;
 }
+
 
 
 /* Botones Listar */
@@ -11805,6 +11808,7 @@ color: #fff;
 background-color: #1cc88a;
 border-color: #1cc88a;
 }
+
 
 
 /* Imagen de las tablas (en Listar Productos y Listar Categorías) */
@@ -11842,6 +11846,12 @@ border-color: #1cc88a;
   float: left;
 }
 
+/* Aviso actualización */
+.avisoact {
+  text-align: right;
+  margin-right: 10%;
+}
+
 /* Aviso error */
 .adviseerror {
   width: 80%;
@@ -11872,7 +11882,7 @@ border-color: #1cc88a;
   width: 80%;
   text-align: center;
   background: none repeat scroll 0 0 #f0eaa0;
-  color: #e7d800;
+  color: #b1a500;
   font-size: 16px;
   margin-top: 20px;
   margin-bottom: 35px;
@@ -11890,16 +11900,6 @@ border-color: #1cc88a;
   height: 80px;
   float: left;
   margin-right: 10px;
-}
-
-
-
-
-
-/* Aviso actualización */
-.avisoact {
-  text-align: right;
-  margin-right: 10%;
 }
 
 

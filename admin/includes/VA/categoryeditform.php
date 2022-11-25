@@ -70,7 +70,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="Nombre de la Categoría" title="Nombre de la categoría registrada en la tienda." maxlength="30" required>
+                        <input type="text" placeholder="Nombre de la Categoría" title="Nombre de la categoría registrada en la tienda." maxlength="30" value="Nombre de la Categoría" required>
 
                         <!-- Data Category Father -->
                         <div class="row mt-3">
@@ -82,9 +82,9 @@
                           </div>
                         </div>
                         <select title="Categoria padre de la categoría registrada en la tienda." required>
-                          <option >
+                          <!-- <option >
                             -- Categoría Padre --
-                          </option>
+                          </option> -->
                           <option title="Ocasiones">
                             <span>
                               Ocasiones
@@ -153,7 +153,7 @@
                             </div>
                           </div>
                         </div>
-                        <textarea type="text" placeholder="Descripción de la Categoría" title="Descripción de la categoría registrada en la tienda." rows="4" maxlength="255"></textarea>
+                        <textarea type="text" placeholder="Descripción de la Categoría" title="Descripción de la categoría registrada en la tienda." rows="4" maxlength="255" value="Descripción de la Categoría"></textarea>
                         
                         <!-- Data Category Image -->
                         <div class="row mt-3">
@@ -194,6 +194,11 @@
                         <option title="Desactivada">
                           <span>
                           Desactivada
+                          </span>
+                        </option>
+                        <option title="Eliminada">
+                          <span>
+                          Eliminada
                           </span>
                         </option>
                       </select>
