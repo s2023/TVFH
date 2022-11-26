@@ -40,18 +40,13 @@
                             <ul>
                               <li class="parent_li">
                                 <span onclick="location.href='categorycreate.php'" title="Crear Categoría">Crear Categoría</span>
-                              </li> 
+                              </li>
                             </ul>
                           </li>
                           
                           <!-- List Orders -->
                           <li class="parent_li">
                             <span onclick="location.href='orderslist.php'" title="Listar Pedidos">Listar Pedidos</span>
-                            <ul>
-                              <li class="parent_li">
-                                <span onclick="location.href='orderedit.php'" title="Crear Pedido">Crear Pedido</span>
-                              </li> 
-                            </ul>
                           </li>
 
                           <!-- List Products -->
