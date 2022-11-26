@@ -1,4 +1,4 @@
-                <!-- Start Row 2 Form User Client Data Inputs (!!!Form Client que se habilita en selector estado usuario) -->
+                <!-- Start Row 2 Form User Client Data Inputs (!!!Form Client que se habilita en selector estado usuario y datos de cliente en pedido) -->
                 <div class="row">
 
                   <!-- Data Billing -->
@@ -156,7 +156,7 @@
                         <div class="row mt-4">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-id-card"
+                              <i style="margin-right: 10px" class="fas fa-map"
                                 title="Departamento / Provincia / Región de Facturación"></i>
                               <h6>Departamento/Provincia/Región de Facturación</h6>
                             </div>
@@ -306,7 +306,7 @@
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fa-solid fa-id-card"
+                            <i style="margin-right: 10px" class="fas fa-map"
                               title=">Departamento/Provincia/Región de Envío"></i>
                             <h6>Departamento/Provincia/Región de Envío</h6>
                           </div>

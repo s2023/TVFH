@@ -297,14 +297,14 @@
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fa-solid fa-id-card"
-                              title=">Departamento/Provincia/Región de Facturación"></i>
+                            <i style="margin-right: 10px" class="fas fa-map"
+                              title="Departamento/Provincia/Región de Facturación"></i>
                             <h6>Departamento/Provincia/Región de Facturación</h6>
                           </div>
                         </div>
                       </div>
                       <select >
-                        <option title=">Departamento/Provincia/Región de Facturación">
+                        <option title="Departamento/Provincia/Región de Facturación">
                           -- Departamento/Provincia/Región de Facturación --
                         </option>
                         <option title="Bogotá D.C.">
@@ -454,14 +454,14 @@
                     <div class="row mt-4">
                       <div class="col-12">
                         <div class="d-flex">
-                          <i style="margin-right: 10px" class="fa-solid fa-id-card"
-                            title=">Departamento/Provincia/Región de Envío"></i>
+                          <i style="margin-right: 10px" class="fas fa-map"
+                            title="Departamento/Provincia/Región de Envío"></i>
                           <h6>Departamento/Provincia/Región de Envío</h6>
                         </div>
                       </div>
                     </div>
                     <select >
-                      <option title=">Departamento/Provincia/Región de Envío">
+                      <option title="Departamento/Provincia/Región de Envío">
                         -- Departamento/Provincia/Región de Envío --
                       </option>
                       <option title="Bogotá D.C.">

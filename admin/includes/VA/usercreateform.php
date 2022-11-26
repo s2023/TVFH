@@ -83,8 +83,8 @@
                         <div class="row mt-2">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-lock" title="Contraseña"></i>
-                              <h6>Contraseña</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-lock" title="Contraseña del Usuario"></i>
+                              <h6>Contraseña del Usuario</h6>
                             </div>
                           </div>
                         </div>

@@ -83,8 +83,8 @@
                         <div class="row mt-2">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-lock" title="Contraseña"></i>
-                              <h6>Contraseña</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-lock" title="Contraseña del Usuario"></i>
+                              <h6>Contraseña del Usuario</h6>
                             </div>
                           </div>
                         </div>
@@ -224,8 +224,8 @@
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta"></i>
-                            <h6>Fecha de Alta</h6>
+                            <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta del Usuario"></i>
+                            <h6>Fecha de Alta del Usuario</h6>
                           </div>
                         </div>
                       </div>
@@ -236,8 +236,8 @@
                       <div class="row mt-3">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja"></i>
-                            <h6>Fecha de Baja</h6>
+                            <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja del Usuario"></i>
+                            <h6>Fecha de Baja del Usuario</h6>
                           </div>
                         </div>
                       </div>

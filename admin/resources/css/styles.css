@@ -89,6 +89,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+ul li {
+  list-style: none;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -11953,6 +11957,40 @@ border-color: #1cc88a;
   margin-left: 3%;
   width: 30%;
 }
+
+
+
+/* Totales Pedido */
+#do_action .total_area {
+  padding-bottom: 18px !important;
+}
+
+#do_action .total_area, #do_action .total_area2, #do_action .chose_area {
+  border: 1px solid #E6E4DF;
+  color: #696763;
+  padding: 30px 25px 30px 0;
+  
+}
+
+.total_area span, .total_area2 span {
+  float: right;
+}
+
+.total_area ul li {
+  background:#eeeeee;
+  color: black;
+  margin-top: 10px;
+  padding: 7px 20px;
+}
+
+
+
+.total_area2 ul li {
+  color: black;
+  padding: 7px 20px;
+}
+
+
 
 
 

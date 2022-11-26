@@ -26,8 +26,8 @@
                       <img src="resources/images/Ekibanas/12ekibanas.png" alt="Img miniatura producto" title="">
                     </td>
                     <td class="cart_description">
-                      <h4><a href="producto.php" title="Nombre del Producto">Nombre del Producto</a></h4>
-                      <h6><a href="categoria.php" title="Categoría">Categoría</a></h6>
+                      <h4><a href="producto.php" target="_blank" title="Nombre del Producto">Nombre del Producto</a></h4>
+                      <h6><a href="categoria.php" target="_blank" title="Categoría">Categoría</a></h6>
                       <p>SKU: 0000000001</p>
                     </td>
                     <td class="cart_price">

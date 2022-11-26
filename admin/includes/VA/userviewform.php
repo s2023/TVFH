@@ -10,9 +10,9 @@
                   <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <button name="Botón Editar Usuario" class="btn btn-danger btn-circle" type="button" value="Guardar y cerrar"
+                <button name="Botón Editar Usuario" class="btn btn-danger btn-circle" type="button" value="Editar Usuario"
                   onclick="location.href='useredit.php'" href="" title="Editar Usuario">
-                  <i class="fas fa-user-edit"></i>
+                  <i class="fas fa-edit"></i>
                 </button>
 
               </div>
@@ -78,8 +78,8 @@
                         <div class="row mt-2">
                           <div class="col-12">
                             <div class="d-flex">
-                              <i style="margin-right: 10px" class="fa-solid fa-lock" title="Contraseña"></i>
-                              <h6>Contraseña</h6>
+                              <i style="margin-right: 10px" class="fa-solid fa-lock" title="Contraseña del Usuario"></i>
+                              <h6>Contraseña del Usuario</h6>
                             </div>
                           </div>
                         </div>
@@ -219,8 +219,8 @@
                       <div class="row mt-4">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta"></i>
-                            <h6>Fecha de Alta</h6>
+                            <i style="margin-right: 10px" class="fas fa-calendar-plus" title="Fecha de Alta del Usuario"></i>
+                            <h6>Fecha de Alta del Usuario</h6>
                           </div>
                         </div>
                       </div>
@@ -231,8 +231,8 @@
                       <div class="row mt-3">
                         <div class="col-12">
                           <div class="d-flex">
-                            <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja"></i>
-                            <h6>Fecha de Baja</h6>
+                            <i style="margin-right: 10px" class="fas fa-calendar-times" title="Fecha de Baja del Usuario"></i>
+                            <h6>Fecha de Baja del Usuario</h6>
                           </div>
                         </div>
                       </div>
