@@ -1,0 +1,52 @@
+			*********PAGINAS INTERFAZ FINAL********
+
+*VISTA CLIENTE:*
+1. Inicio (Home) / VC //OK
+2. Nosotros / VC //OK
+3. Contacto / VC //OK
+4. Búsqueda / VC //OK
+5. Ocasiones / VC //OK
+6. Categoría / VC //OK
+7. Producto / VC //OK
+8. Carrito de Compras / VC //OK
+9. Iniciar Sesión / VC //OK
+10. Registro de Usuario 1 / VC//OK
+11. Registro de Usuario 2 / VC //OK
+12. Restablecer contraseña 1 / VC //OK
+13. Restablecer contraseña 2 / VC //OK
+14. Restablecer contraseña 3 / VC//OK
+15. Confirmar Pedido / VC //OK
+16. Ver Usuario  / VC //OK
+17. Editar Usuario / VC //OK
+18. Listar Pedidos / VC  //OK
+19. Ver pedido / VC  //OK
+20. Términos y condiciones / VC  //OK
+21. Mapa del Sitio / VC //OK
+22. Ayuda / VC //OK
+
+
+*VISTA ADMINISTRADOR:*
+23. Iniciar Sesión / VA //OK
+24. Restablecer contraseña 1 / VA //OK
+25. Restablecer contraseña 2 / VA  //OK
+26. Restablecer contraseña 3 / VA  //OK
+27. Inicio / VA //OK
+28. Listar Usuarios / VA //OK
+29. Crear Usuario / VA //OK
+30. Editar Usuario / VA  //OK
+31. Ver Usuario / VA  //OK
+32. Listar Categorías / VA //OK
+33. Crear Categoría / VA //OK
+34. Editar Categoría / VA //OK
+35. Listar Productos / VA //OK
+36. Crear Producto / VA //OK
+37. Editar Producto / VA //OK
+38. Listar Pedidos / VA //OK
+39. Ver Pedido / VA //OK
+40. Editar Pedido / VA //OK
+41. Opciones / VA //OK
+
+42. Mapa del Sitio / VA //OK
+43. Ayuda / VA //OK
+
+
