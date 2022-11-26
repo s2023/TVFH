@@ -40,7 +40,7 @@
     <!-- End Breadcrumb Article-->
 
 
-    <!-- Start Article: View Order -->
+    <!-- Start Article: Sitemap -->
     <article>
 
       <!-- Start Header Article -->
@@ -54,7 +54,7 @@
       </header>
       <!-- End Header Article -->
 
-      <!-- Start View Order Section -->
+      <!-- Start Sitemap Section -->
       <section>
         <div class="container"> 
 
@@ -64,10 +64,10 @@
 
         </div>
       </section>
-      <!-- End View Order Section -->
+      <!-- End Sitemap Section -->
 
     </article>
-    <!-- End Article: View Order-->
+    <!-- End Article: Sitemap-->
 
   </main>
 

@@ -13,8 +13,9 @@
               &middot;
 
               <!-- Sitemap -->
-              <a href="sitemap.php" title="Mapa del Sitio">Mapa del Sitio</a>
+              <a href="#" data-toggle="modal" data-target="#myModal2" title="Mapa del Sitio">Mapa del Sitio</a>                
               <!-- Modal Sitemap -->
+              <?php include_once 'includes/VA/modal-sitemap.php'?>
 
             </div>
           </div>
