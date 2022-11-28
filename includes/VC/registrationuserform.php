@@ -532,7 +532,7 @@
                 <div class="col-12">
                   <div class="d-flex justify-content-center">
                     <!-- Sign up Button -->
-                    <button type="submit" class="btn btn-default add-to-cart" title="Registrarse" href="registro2.php"
+                    <button type="submit" class="btn btn-default add-to-cart" title="Registrarse" href="autenticacion.php"
                       value="Registrarse">
                       <i class="fa-solid fa-user-plus"></i> Registrarse
                     </button>

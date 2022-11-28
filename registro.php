@@ -79,7 +79,7 @@
     <!-- Link de ejemplo para ir a registro 2 -->
     <div class="text-center">
       <br>
-      <a href="registro2.php" title="Registro 2">Link de ejemplo para ir a registro 2</a>
+      <a href="autenticacion.php" title="Registro 2">Link de ejemplo para ir a registro 2</a>
     </div>
 
   </main>
