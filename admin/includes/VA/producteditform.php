@@ -1,30 +1,47 @@
+<?php
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CategoriaRepository.php';
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/EstadoProductoRepository.php';
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/VisibilidadProductoRepository.php';
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/ProductoRepository.php';
+  $categoriaRepository = new CategoriaRepository();
+  $estadoProductoRepository = new EstadoProductoRepository();
+  $visibilidadProductoRepository = new VisibilidadProductoRepository();
+  $productoRepository = new ProductoRepository();
+
+  $categorias = $categoriaRepository->listarTodos();
+  $estados = $estadoProductoRepository->listarTodos();
+  $visibilidades = $visibilidadProductoRepository->listarTodos();
+  $producto = $productoRepository->buscarPorId($_GET['id']);
+?>
           <!-- Start Product Edit Form -->
-          <form action="#">
+          <form action="acciones/editarproducto.php?id=<?php echo $producto->idProducto ?>" method="post">
 
             <!-- Buttons Form -->
             <div class="card mb-4">
               <div class="card-body">
 
-                <button name="Botón Volver a la lista" class="btn btn-danger btn-circle" type="button" value="Volver a la lista"
+                <button class="btn btn-danger btn-circle" type="button" value="Volver a la lista"
                   onclick="location.href='productslist.php'" href="" title="Volver a la lista">
                   <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <button name="Botón Guardar y cerrar" class="btn btn-danger btn-circle" type="button" value="Guardar y cerrar"
-                  onclick="location.href='productslist.php'" href="" title="Guardar y cerrar">
+                <button class="btn btn-danger btn-circle" type="submit" value="Guardar y cerrar"
+                  title="Guardar y cerrar">
                   <i class="fas fa-check"></i>
                 </button>
 
-                <button name="Botón Guardar y permanecer" class="btn btn-danger btn-circle" type="button"
+                <!-- TODO: no usar este -->
+                <!-- <button name="Botón Guardar y permanecer" class="btn btn-danger btn-circle" type="button"
                   value="Guardar y permanecer" onclick="location.href='" href="#" title="Guardar y permanecer">
                   <i class="fas fa-save"></i>
-                </button>
+                </button> -->
 
+                <!-- TODO: no usar este -->
                 <!-- Lo dejé como anchor para que funcionara el target="_blank", no se como es pa button -->
-                <a name="Botón Vista previa" class="btn btn-danger btn-circle" 
+                <!-- <a name="Botón Vista previa" class="btn btn-danger btn-circle" 
                   value="Vista previa" href="../producto.php" target="_blank" title="Vista previa">
                   <i class="fas fa-search"></i>
-                </a>
+                </a> -->
 
               </div>
             </div>
@@ -57,7 +74,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="9999999999"
+                        <input type="text" value="<?php echo $producto->idProducto ?>"
                           title="Identificador único del producto registrado en la tienda."
                           maxlength="10" required disabled>
 
@@ -70,7 +87,8 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="Nombre del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" value="Nombre del Producto" required>
+                        <input type="text" placeholder="Nombre del Producto" title="Nombre del producto registrado en la tienda." maxlength="30" required
+                          id="nombreProducto" name="nombreProducto" value="<?php echo $producto->nombreProducto ?>">
 
                         <!-- Data Product Category -->
                         <div class="row mt-3">
@@ -81,55 +99,22 @@
                             </div>
                           </div>
                         </div>
-                        <select title="Categoría a la cual pertenece el producto registrado en la tienda." required>
-                          <!-- <option >
+                        <select title="Categoría a la cual pertenece el producto registrado en la tienda." required
+                          id="categoriaId" name="categoriaId">
+                          <option value>
                             -- Categoría del Producto --
-                          </option> -->
-                          <option title="Bautizo">
-                            <span>
-                              Bautizo
-                            </span>
                           </option>
-                          <option title="Bouquet">
-                            <span>
-                            Bouquet
-                            </span>
-                          </option>
-                          <option title="Cajas de Rosas">
-                            <span>
-                              Cajas de Rosas
-                            </span>
-                          </option>
-                          <option title="Diseños Especiales">
-                            <span>
-                              Diseños Especiales
-                            </span>
-                          </option>                          
-                          <option title="Ekibanas (Ramos pequeños)">
-                            <span>
-                              Ekibanas (Ramos pequeños)
-                            </span>
-                          </option>                          
-                          <option title="Funeral">
-                            <span>
-                              Funeral
-                            </span>
-                          </option>                          
-                          <option title="Matrimonio">
-                            <span>
-                              Matrimonio
-                            </span>
-                          </option>
-                          <option title="Primera Comunión">
-                            <span>
-                              Primera Comunión
-                            </span>
-                          </option>
-                          <option title="Ramos Fruteros">
-                            <span>
-                              Ramos Fruteros
-                            </span>
-                          </option>
+                          <?php foreach ($categorias as $categoria) { ?>
+                            <?php if ($producto->categoriaId == $categoria['idCategoria']) { ?>
+                              <option value="<?php echo $categoria['idCategoria'] ?>" selected>
+                                <?php echo $categoria['nombreCategoria'] ?>
+                              </option>
+                            <?php } else { ?>
+                              <option value="<?php echo $categoria['idCategoria'] ?>">
+                                <?php echo $categoria['nombreCategoria'] ?>
+                              </option>
+                            <?php } ?>
+                          <?php } ?>
                         </select>
 
                         <!-- Data Product SKU (Stock Keeping Unit) -->
@@ -143,7 +128,7 @@
                         </div>
                         <input type="text" placeholder="SKU (Stock Keeping Unit)"
                           title="SKU (Stock Keeping Unit) Unidad de mantenimiento de stock. Código referencia de inventario del producto que maneja la empresa internamente."
-                          maxlength="20" value="0000000001">
+                          maxlength="20" id="skuProducto" name="skuProducto" value="<?php echo $producto->skuProducto ?>">
 
                         <!-- Data Product Unit Value (Capturar $) -->
                         <div class="row mt-3">
@@ -154,8 +139,8 @@
                             </div>
                           </div>
                         </div>
-                        <input type="text" placeholder="$" title="Valor unitario del producto registrado en la tienda." maxlength="12" value="$999.999"
-                          required>
+                        <input type="text" placeholder="$" title="Valor unitario del producto registrado en la tienda." maxlength="12"
+                          required id="valorUnitarioProducto" name="valorUnitarioProducto" value="<?php echo $producto->valorUnitarioProducto ?>">
 
                       </div>
 
@@ -172,7 +157,11 @@
                             </div>
                           </div>
                         </div>
-                        <textarea type="text" placeholder="Descripción corta del Producto" title="Descripción corta del producto registrado en la tienda." rows="4" maxlength="255" value="Descripción corta del Producto"></textarea>
+                        <textarea type="text"
+                          placeholder="Descripción corta del Producto"
+                          title="Descripción corta del producto registrado en la tienda."
+                          rows="4" maxlength="255" id="descripcionCortaProducto" name="descripcionCortaProducto"
+                          ><?php echo $producto->descripcionCortaProducto ?></textarea>
                         
                         <!-- Data Product Description Long -->
                         <div class="row mt-3">
@@ -184,7 +173,11 @@
                             </div>
                           </div>
                         </div>
-                        <textarea type="text" placeholder="Descripción larga del Producto" title="Descripción larga del producto registrado en la tienda." rows="4" maxlength="2000" value="Descripción larga del Producto"></textarea>
+                        <textarea type="text"
+                          placeholder="Descripción larga del Producto"
+                          title="Descripción larga del producto registrado en la tienda."
+                          rows="4" maxlength="2000" id="descripcionLargaProducto" name="descripcionLargaProducto"
+                          ><?php echo $producto->descripcionLargaProducto ?></textarea>
 
                         <!-- Data Product Image -->
                         <div class="row mt-3">
@@ -196,7 +189,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda." value="">
+                        <input type="file" placeholder="Imagen del Producto" title="Imagen del producto registrado en la tienda.">
 
                       </div>
 
@@ -216,27 +209,19 @@
                           </div>
                         </div>
                       </div>
-                      <select title="Estado del producto registrado en la tienda: Activado, Desactivado, Borrador o Eliminado." required>
-                        <option title="Activado">
-                          <span>
-                          Activado
-                          </span>
-                        </option>
-                        <option title="Desactivado">
-                          <span>
-                          Desactivado
-                          </span>
-                        </option>
-                        <option title="Borrador">
-                          <span>
-                          Borrador
-                          </span>
-                        </option>
-                        <option title="Eliminado">
-                          <span>
-                          Eliminado
-                          </span>
-                        </option>
+                      <select title="Estado del producto registrado en la tienda: Activado, Desactivado, Borrador o Eliminado." required
+                        id="estadoProductoId" name="estadoProductoId">
+                        <?php foreach ($estados as $estado) { ?>
+                          <?php if ($producto->estadoProductoId == $estado['idEstadoProducto']) { ?>
+                            <option value="<?php echo $estado['idEstadoProducto'] ?>" selected>
+                          <?php echo $estado['nombreEstadoProducto'] ?>
+                          </option>
+                            <?php } else { ?>
+                              <option value="<?php echo $estado['idEstadoProducto'] ?>">
+                          <?php echo $estado['nombreEstadoProducto'] ?>
+                          </option>
+                            <?php } ?>
+                        <?php } ?>
                       </select>
 
                       <!-- Data Product Visibility -->
@@ -248,7 +233,8 @@
                           </div>
                         </div>
                       </div>
-                      <select title="Visibilidad del producto en la tienda: Público o Privado." required>
+                      <select title="Visibilidad del producto en la tienda: Público o Privado." required
+                        id="visibilidadProductoId" name="visibilidadProductoId">
                         <option title="Activado">
                           <span>
                           Público
@@ -271,7 +257,9 @@
                         </div>
                       </div>
                       <!-- Falta Configurar horafecha -->
-                      <input type="date" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de registro del producto registrado en la tienda." required disabled>
+                      <input type="date"
+                        value="<?php echo date_format(date_create($producto->fechaAltaProducto), "Y-m-d");?>"
+                        title="Fecha de registro del producto registrado en la tienda." required disabled>
 
                       <!-- Form Product Date Low -->
                       <div class="row mt-3">
@@ -283,7 +271,8 @@
                         </div>
                       </div>
                       <!-- Falta Configurar horafecha -->
-                      <input type="datetime-local" placeholder="" title="Fecha de eliminación del producto registrado en la tienda." required disabled>
+                      <input type="datetime-local" placeholder="" title="Fecha de eliminación del producto registrado en la tienda." required disabled
+                        id="fechaBajaProducto" name="fechaBajaProducto">
 
                     </div>
                   </div>

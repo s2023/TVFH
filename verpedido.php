@@ -20,6 +20,47 @@
   <?php include_once 'includes/VC/headernav.php'?>
   <!-- End Header Navigation Section -->
 
+  <?php
+    @session_start();
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/UsuarioRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/PaisRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/DepProvRegRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CiudadRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/TipoDocumentoRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/PedidoRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/DetallePedidoRepository.php';
+
+    $usuarioRepository = new UsuarioRepository();
+    $paisRepository = new PaisRepository();
+    $depProvRegRepository = new DepProvRegRepository();
+    $ciudadRepository = new CiudadRepository();
+    $tipoDocumentoRepository = new TipoDocumentoRepository();
+    $pedidoRepository = new PedidoRepository();
+    $detallePedidoRepository = new DetallePedidoRepository();
+
+    $pedido = $pedidoRepository->buscarPorId($_GET['id']);
+    $detallesPedido = $detallePedidoRepository->listarDetallesPorPedidoId($pedido->idPedido);
+    $usuario = $usuarioRepository->buscarPorId($pedido->usuarioId);
+
+    $ciudadFacturacion = $ciudadRepository->buscarPorId($usuario->ciudadFacturacionId);
+    $ciudadEnvio = $ciudadRepository->buscarPorId($usuario->ciudadEnvioId);
+    $depProvRegFacturacion = $depProvRegRepository->buscarPorId($ciudadFacturacion->depProvRegId);
+    $depProvRegEnvio = $depProvRegRepository->buscarPorId($ciudadEnvio->depProvRegId);
+    $paisFacturacion = $paisRepository->buscarPorId($depProvRegFacturacion->paisId);
+    $paisEnvio = $paisRepository->buscarPorId($depProvRegEnvio->paisId);
+    
+    $ciudadesFacturacion = $ciudadRepository->listarCiudadesByDepProvReg($depProvRegFacturacion->idDepProvReg);
+    $ciudadesEnvio = $ciudadRepository->listarCiudadesByDepProvReg($depProvRegEnvio->idDepProvReg);
+
+    $depProvRegsFacturacion = $depProvRegRepository->listarDepProvRegPorPais($paisFacturacion->idPais);
+    $depProvRegsEnvio = $depProvRegRepository->listarDepProvRegPorPais($paisEnvio->idPais);
+
+    $paisesFacturacion = $paisRepository->listarTodos();
+    $paisesEnvio = $paisRepository->listarTodos();
+
+    $tiposDeDocumento = $tipoDocumentoRepository->listarTodos();
+  ?>
+
   <main>
 
     <!-- Start Breadcrumb Article-->

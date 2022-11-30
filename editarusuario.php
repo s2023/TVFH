@@ -40,14 +40,6 @@
     </article>
     <!-- End Breadcrumb Article-->
 
-    <!-- Start Advise OK Edit User Article-->
-    <?php include_once 'includes/VC/avisoeditarok.php'?>
-    <!-- End Advise OK Edit User Article-->
-
-    <!-- Start Advise Error Article-->
-    <?php include_once 'includes/VC/avisoerror.php'?>
-    <!-- End Advise Error Article-->
-
     <!-- Start Article: Edit User -->
     <article>
 
@@ -98,6 +90,8 @@
 
   <!-- SCRIPTS -->
   <?php include_once 'includes/VC/scripts.php'?>
+  <script src="resources/js/app/pais-depregprov-ciudad.js"></script>
+  <script src="resources/js/app/usuario-pdc.js"></script>
 
 </body>
 

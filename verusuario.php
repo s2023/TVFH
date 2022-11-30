@@ -20,6 +20,31 @@
   <?php include_once 'includes/VC/headernav.php'?>
   <!-- End Header Navigation Section -->
 
+  <?php
+    @session_start();
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/UsuarioRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/PaisRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/DepProvRegRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CiudadRepository.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/TipoDocumentoRepository.php';
+
+    $usuarioRepository = new UsuarioRepository();
+    $paisRepository = new PaisRepository();
+    $depProvRegRepository = new DepProvRegRepository();
+    $ciudadRepository = new CiudadRepository();
+    $tipoDocumentoRepository = new TipoDocumentoRepository();
+
+    $usuario = $usuarioRepository->buscarPorId($_SESSION['idUsuario']);
+    $tipoDocumentoUsuario = $tipoDocumentoRepository->buscarPorId($usuario->tipoDocumentoUsuarioId);
+    $tipoDocumentoFacturacion = $tipoDocumentoRepository->buscarPorId($usuario->tipoDocumentoFacturacionId);
+    $ciudadFacturacion = $ciudadRepository->buscarPorId($usuario->ciudadFacturacionId);
+    $ciudadEnvio = $ciudadRepository->buscarPorId($usuario->ciudadEnvioId);
+    $depProvRegFacturacion = $depProvRegRepository->buscarPorId($ciudadFacturacion->depProvRegId);
+    $depProvRegEnvio = $depProvRegRepository->buscarPorId($ciudadEnvio->depProvRegId);
+    $paisFacturacion = $paisRepository->buscarPorId($depProvRegFacturacion->paisId);
+    $paisEnvio = $paisRepository->buscarPorId($depProvRegEnvio->paisId);
+  ?>
+
   <main>
     
     <!-- Start Breadcrumb Article-->
@@ -82,40 +107,40 @@
                   <div class="col-6">
                     <p>
                       <strong>Datos del Usuario</strong><br>
-                      - Nombre de Usuario (Apodo): ""<br>
-                      - E-mail del Usuario: ""<br>
-                      - Nombres del Usuario: ""<br>
-                      - Apellidos del Usuario: ""<br>
-                      - Tipo de Documento del Usuario: ""<br>
-                      - Número de Documento del Usuario: ""<br>
+                      - Nombre de Usuario (Apodo): <?php echo $usuario->apodoUsuario ?><br>
+                      - E-mail del Usuario: <?php echo $usuario->correoElectronicoUsuario ?><br>
+                      - Nombres del Usuario: <?php echo $usuario->nombresUsuario ?><br>
+                      - Apellidos del Usuario: <?php echo $usuario->apellidosUsuario ?><br>
+                      - Tipo de Documento del Usuario: <?php echo $tipoDocumentoUsuario->nombreTipoDocumento ?><br>
+                      - Número de Documento del Usuario: <?php echo $usuario->numeroDocumentoUsuario ?><br>
                     </p>
                   </div>
                 
                   <!-- Data Billing & Shipping-->
                   <div class="col-6">
                     <p>
-                      <strong>Datos de Facturación</strong><br>             
-                      - Nombres de Facturación: ""<br>
-                      - Apellidos de Facturación: ""<br>
-                      - Tipo de Documento de Facturación: ""<br>
-                      - Número de Documento de Facturación: ""<br>
-                      - E-mail de Facturación: ""<br>
-                      - Teléfono de Facturación: ""<br>
-                      - Dirección de Facturación: ""<br>
-                      - País de Facturación: ""<br>
-                      - Departamento / Provincia / Región de Facturación: ""<br>
-                      - Ciudad de Facturación: ""<br><br> 
+                      <strong>Datos de Facturación</strong><br>
+                      - Nombres de Facturación: <?php echo $usuario->nombresFacturacion ?><br>
+                      - Apellidos de Facturación: <?php echo $usuario->apellidosFacturacion ?><br>
+                      - Tipo de Documento de Facturación: <?php echo $tipoDocumentoFacturacion->nombreTipoDocumento ?><br>
+                      - Número de Documento de Facturación: <?php echo $usuario->numeroDocumentoFacturacion ?><br>
+                      - E-mail de Facturación: <?php echo $usuario->correoElectronicoFacturacion ?><br>
+                      - Teléfono de Facturación: <?php echo $usuario->numeroTelefonoFacturacion ?><br>
+                      - Dirección de Facturación: <?php echo $usuario->direccionFacturacion ?><br>
+                      - País de Facturación: <?php echo $paisFacturacion->nombrePais ?><br>
+                      - Departamento / Provincia / Región de Facturación: <?php echo $depProvRegFacturacion->nombreDepProvReg ?><br>
+                      - Ciudad de Facturación: <?php echo $ciudadFacturacion->nombreCiudad ?><br><br>
 
-                      <strong>Datos de Envío</strong><br>  
-                      - Nombres de Envío: ""<br>
-                      - Apellidos de Envío: ""<br>
-                      - Teléfono de Envío: ""<br>
-                      - Dirección de Envío: ""<br>
-                      - País de Envío: ""<br>
-                      - Departamento / Provincia / Región de Envío: ""<br>
-                      - Ciudad de Envío: ""<br>
+                      <strong>Datos de Envío</strong><br>
+                      - Nombres de Envío:  <?php echo $usuario->nombresEnvio ?><br>
+                      - Apellidos de Envío: <?php echo $usuario->apellidosEnvio ?><br>
+                      - Teléfono de Envío: <?php echo $usuario->numeroTelefonoEnvio ?><br>
+                      - Dirección de Envío: <?php echo $usuario->direccionEnvio ?><br>
+                      - País de Envío: <?php echo $paisEnvio->nombrePais ?><br>
+                      - Departamento / Provincia / Región de Envío: <?php echo $depProvRegEnvio->nombreDepProvReg ?><br>
+                      - Ciudad de Envío: <?php echo $ciudadEnvio->nombreCiudad ?><br><br>
                     </p>
-                  </div>  
+                  </div>
 
                 </div>
 
@@ -126,8 +151,8 @@
             <div style="margin: auto;" class="col-sm-4 col-sm-offset-1">
               <div class="login-form">
 
-                <!-- Form body -->             
-                <form action="#"> 
+                <!-- Form body -->
+                <form action="acciones/cerrarsesion.php">
 
                   <!-- Log Out Button -->
                   <div class="row">
@@ -141,7 +166,7 @@
                     </div>
                   </div>
 
-                </form>              
+                </form>
 
               </div>
             </div>

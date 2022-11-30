@@ -12,7 +12,7 @@
                       <!-- Order State -->
                       <div class="row">
                         <div class="col-sm-12">
-                          <h5 class="marginorder2">Estado del Pedido: <label>Finalizado</label>.</h5>
+                          <h5 class="marginorder2">Estado del Pedido: <label><?php echo $pedido->nombreEstadoPedido ?></label>.</h5>
                         </div>                      
                       </div>
 
@@ -22,24 +22,28 @@
                         <div class="col-sm-6">                          
                           <!-- Order Date Purchase (fechaInicioPedido)-->
                           <h5 class="marginorder2">Fecha de Compra:</h5>
-                          <input disabled class="marginorder2" type="date" id="datedelivery" name="fechaentrega" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de entrega:" required>
+                          <input disabled class="marginorder2" type="date" id="datedelivery" name="fechaentrega"
+                          value="<?php echo date_format(date_create($pedido->fechaInicioPedido), "Y-m-d") ?>"
+                          title="Fecha de entrega:" required>
                         </div>      
 
                         <div class="col-sm-6">
                           <!-- Order Date Delivery -->
                           <h5 class="marginorder2">Fecha de entrega:</h5>
-                          <input disabled class="marginorder2" type="date" id="datedelivery" name="fechaentrega" value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>" title="Fecha de entrega:" required>
+                          <input disabled class="marginorder2" type="date" id="datedelivery" name="fechaentrega"
+                          value="<?php echo date_format(date_create($pedido->fechaEntregaPedido), "Y-m-d") ?>"
+                          title="Fecha de entrega:" required>
                         </div>                        
 
                       </div>
 
                       <!-- Order Message -->
                       <h5 class="marginorder2">Mensaje en la tarjeta:</h5>
-                      <textarea disabled name="Mensaje Pedido" placeholder="Escriba un mensaje para la tarjeta..." rows="5" maxlength="300"></textarea>
+                      <textarea disabled name="Mensaje Pedido" placeholder="Escriba un mensaje para la tarjeta..." rows="5" maxlength="300"><?php echo $pedido->mensajePedido ?></textarea>
 
                       <!-- Order Notes -->
                       <h5 class="marginorder2">Notas del Pedido</h5>
-                      <textarea disabled name="Mensaje Pedido" placeholder="Escriba una nota para el pedido (indicación, señal, puerta, etc...)" rows="4" maxlength="150"></textarea>
+                      <textarea disabled name="Mensaje Pedido" placeholder="Escriba una nota para el pedido (indicación, señal, puerta, etc...)" rows="4" maxlength="150"><?php echo $pedido->notaPedido ?></textarea>
                       
                       </div>
                   </div>
@@ -81,11 +85,12 @@
                     <div class="total_area">
 
                       <!-- Order Totals body -->
+                      <!-- TODO: pendiente -->
                       <h5 class="marginorder2 text-center">Totales</h5>  
                       <ul>
-                        <li>Sub Total <span>$20.000</span></li>                  
-                        <li>Valor envío <span>$12.000</span></li>
-                        <li>Total <span>$32.000</span></li>
+                        <li>Sub Total <span>$<?php echo $pedido->subtotal ?></span></li>                  
+                        <li>Valor envío <span>$<?php echo $pedido->envio ?></span></li>
+                        <li>Total <span>$<?php echo $pedido->total ?></span></li>
                       </ul>   
 
                     </div>

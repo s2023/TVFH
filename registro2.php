@@ -29,7 +29,7 @@
       <section class="container mt-4">
         <div class="row">
           <div class="btn-group btn-breadcrumb">
-            <a href="index.php" class="btn btn-default"><i class="fa-solid fa-house"></i></a>
+            <a href="index.php" class="btn btn-default"><i aria-hidden="true" class="fa-solid fa-house"></i></a>
             <a href="registro.php" class="btn btn-default">Registro de Usuario</a>
           </div>
         </div>
@@ -72,15 +72,19 @@
             <div class="col-12">
               <div class="d-flex justify-content-center">
                 <!-- Confirmation Sign up Button  -->
-                <button onclick="location.href='autenticacion.php'" type="submit" class="btn btn-default add-to-cart" title="De acuerdo" href="registro2.php"
+                <button onclick="location.href='autenticacion.php'"
+                  type="submit"
+                  class="btn btn-default add-to-cart"
+                  title="De acuerdo"
+                  href="registro2.php"
                   value="De acuerdo">
-                  <i class="fa-solid fa-check"></i> De acuerdo
+                  <i aria-hidden="true" class="fa-solid fa-check"></i> De acuerdo
                 </button>
               </div>
             </div>
           </div><br>
 
-        </div>        
+        </div>
       </section>
       <!-- End Registration 2 Section -->
 

@@ -1,3 +1,8 @@
+<?php
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/UsuarioRepository.php';
+  $usuarioRepository = new UsuarioRepository();
+  $usuarios = $usuarioRepository->listarTodos();
+?>
       <!-- Start Main List Users -->
       <main>
         
@@ -12,12 +17,13 @@
             <li class="breadcrumb-item active">Listar Usuarios</li>
           </ol>
 
+          <!-- TODO: check this -->
           <!-- Start Advise OK  -->
-          <?php include_once 'includes/VA/adviseok.php'?>
+          <?php //include_once 'includes/VA/adviseok.php'?>
           <!-- End Advise OK  -->
 
           <!-- Start Advise Error Article-->
-          <?php include_once 'includes/VA/adviseerror.php'?>
+          <?php //include_once 'includes/VA/adviseerror.php'?>
           <!-- End Advise Error Article-->
 
           <!-- Buttons Menu -->
@@ -45,7 +51,7 @@
 
                 <!-- Table Head -->
                 <thead>
-                  <tr>                    
+                  <tr>
                     <th>ID</th>
                     <th>Tipo de Usuario</th>
                     <th>Apodo del Usuario</th>
@@ -57,429 +63,65 @@
                     <th>Total Pedidos</th>
                     <th>Opciones</th>
                   </tr>
-                </thead>                
+                </thead>
 
                 <!-- Table Body -->
                 <tbody>
-
-                  <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start User Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End User Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>Apodo Usuario</td>
-                    <td>Nombre de 50 caracteres Jaime de Jesús del Carmesí</td>
-                    <td>Apellido de 50 caracteres Andalucía de la Santa Fé</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>Eliminado</td>
-                    <td>1</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Administrador</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivado</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>Cliente</td>
-                    <td>apodoUsuario</td>
-                    <td>Nombres</td>
-                    <td>Apellidos</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activado</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/useroptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-  
+                  <?php foreach ($usuarios as $usuario) { ?>
+                    <tr>
+                      <td><?php echo $usuario['idUsuario'] ?></td>
+                      <td><?php echo $usuario['nombreTipoUsuario'] ?></td>
+                      <td><?php echo $usuario['apodoUsuario'] ?></td>
+                      <td><?php echo $usuario['nombresUsuario'] ?></td>
+                      <td><?php echo $usuario['apellidosUsuario'] ?></td>
+                      <td><?php echo $usuario['fechaAltaUsuario'] ?></td>
+                      <td><?php echo $usuario['fechaBajaUsuario'] ?></td>
+                      <td><?php echo $usuario['nombreEstadoUsuario'] ?></td>
+                      <td><?php echo $usuario['totalPedidos'] ?></td>
+                      <td>
+                        <!-- Start User Options Item-->
+                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                          <li class="nav-item dropdown">
+                            <!-- Menu Button -->
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones Usuario">
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <!-- Menu List-->
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <!-- User View Option -->
+                              <li>
+                                <a class="dropdown-item" href="userview.php?id=<?php echo $usuario['idUsuario'] ?>" title="Ver Usuario"><i class="fas fa-eye"></i> Ver Usuario</a>
+                              </li>
+                              <!-- User Edit Option -->
+                              <li>
+                                <a class="dropdown-item" href="useredit.php?id=<?php echo $usuario['idUsuario'] ?>" title="Editar Usuario"><i class="fas fa-edit"></i> Editar Usuario</a>
+                              </li>
+                              <!-- Divider Menu -->
+                              <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <!-- User Activate Option -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Activar Usuario"><i class="fas fa-check-square"></i> Activar Usuario</a>
+                              </li>
+                              <!-- User Deactivate Option  -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Desactivar Usuario"><i class="fas fa-ban"></i> Desactivar Usuario</a>
+                              </li>
+                              <!-- User Duplicate Option  -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Duplicar Usuario"><i class="fas fa-clone"></i> Duplicar Usuario</a>
+                              </li>
+                              <!-- User Eliminate Option  -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Eliminar Usuario"><i class="fas fa-trash"></i> Eliminar Usuario</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <!-- End User Options Item-->
+                    </tr>
+                  <?php } ?>
                 </tbody>
               
               </table>

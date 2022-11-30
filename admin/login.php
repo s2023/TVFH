@@ -16,13 +16,17 @@
 <body class="bg-primary">
 
   <div id="layoutAuthentication">
-
+    <!-- TODO: revisar estos includes -->
     <!-- Start Advise OK  -->
-    <?php include_once 'includes/VA/adviseok.php'?>
+    <?php //include_once 'includes/VA/adviseok.php'?>
     <!-- End Advise OK  -->
 
     <!-- Start Advise Error -->
-    <?php include_once 'includes/VA/adviseerror.php'?>
+    <?php
+      if (isset($_GET['login']) && $_GET['login'] == 'false') {
+        include_once 'includes/VA/adviseerror.php';
+      }
+    ?>
     <!-- End Advise Error -->
 
     <!-- Start Content Login -->

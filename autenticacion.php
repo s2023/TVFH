@@ -29,7 +29,7 @@
       <section class="container mt-4">
         <div class="row">
           <div class="btn-group btn-breadcrumb">
-            <a href="index.php" class="btn btn-default"><i class="fa-solid fa-house"></i></a>
+            <a href="index.php" class="btn btn-default"><i aria-hidden="true" class="fa-solid fa-house"></i></a>
             <a href="autenticacion.php" class="btn btn-default">Iniciar Sesión</a>
           </div>
         </div>
@@ -39,16 +39,18 @@
     </article>
     <!-- End Breadcrumb Article-->
 
+    <!-- TODO: revisar estos includes -->
+
     <!-- Start Advise OK SignUp Article-->
-    <?php include_once 'includes/VC/avisoregistrook.php'?>
+    <?php //include_once 'includes/VC/avisoregistrook.php'?>
     <!-- End Advise OK SignUp Article-->
 
     <!-- Start Advise OK Change Password Article-->
-    <?php include_once 'includes/VC/avisocambiocontraseñaok.php'?>
+    <?php //include_once 'includes/VC/avisocambiocontraseñaok.php'?>
     <!-- End Advise OK Change Password  Article-->
 
     <!-- Start Advise Error Article-->
-    <?php include_once 'includes/VC/avisoerror.php'?>
+    <?php //include_once 'includes/VC/avisoerror.php'?>
     <!-- End Advise Error Article-->
 
     <!-- Start Article: Log In-->

@@ -55,47 +55,57 @@
       </header>
       <!-- End Header Article -->
 
+      <?php
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CategoriaRepository.php';
+        $categoriaRepository = new CategoriaRepository();
+        $categoria = null;
+
+        if (isset($_GET['id'])) {
+          $categoria = $categoriaRepository->buscarPorId($_GET['id']);
+        }
+      ?>
       <!-- Start Category Section -->
       <section>
         <div class="container">
-          <div class="row">
+          <?php if ($categoria == null) { ?>
+            <!-- Start Advise Error -->
+            <div class="adviseerror">
+              <img src="resources/images/otrasImag/iconErrorX.png">
+              <br><h5>Categoria no disponible</h5><br>
+            </div>
+            <!-- End Advise Error -->
+          <?php } else { ?>
+            <div class="row">
 
-            <!-- Category Aside -->            
-            <?php include_once 'includes/VC/aside.php'?>
+              <!-- Category Aside -->            
+              <?php include_once 'includes/VC/aside.php'?>
 
-            <!-- Category Body -->
-            <div class="col-sm-9 padding-right">
+              <!-- Category Body -->
+              <div class="col-sm-9 padding-right">
 
-              <!-- Category Image/Description -->
-              <div class="row" style="margin-bottom: 50px;">
+                <!-- Category Image/Description -->
+                <div class="row" style="margin-bottom: 50px;">
 
-                <!-- Category Image -->
-                <div class="col-sm-4">
-                  <img src="resources/images/Paginas/6.CategoríaVC/1.png" alt="" class="" width="250px" height="300px">
+                  <!-- Category Image -->
+                  <div class="col-sm-4">
+                    <!-- TODO: agregar imagen -->
+                    <img src="resources/images/Paginas/6.CategoríaVC/1.png" alt="" class="" width="250px" height="300px">
+                  </div>
+
+                  <!-- Category Description -->
+                  <div class="col-sm-8 product-information">
+                    <h4><?php echo $categoria->nombreCategoria ?></h4>
+                    <p><?php echo $categoria->descripcionCategoria ?></p>
+                  </div>
+
                 </div>
 
-                <!-- Category Description -->
-                <div class="col-sm-8 product-information">
-                  <h4>Nombre de la Categoria</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum venenatis dui in
-                    blandit. Ut tincidunt arcu id mi luctus, ac feugiat mauris hendrerit. Praesent dolor magna, interdum
-                    ac egestas vel, porta et purus. Praesent id enim venenatis neque sagittis posuere vel eget enim.
-                    Pellentesque suscipit libero dui, in efficitur eros porttitor quis. Etiam blandit nibh eu massa
-                    varius, at vehicula elit efficitur. Curabitur hendrerit augue vel enim dictum finibus. Suspendisse
-                    sed metus feugiat, ullamcorper orci non, egestas neque. Nulla accumsan mollis mollis. Fusce in ex
-                    tincidunt, maximus neque sed, fringilla urna.
-                  </p>
-                </div>
+                <!-- Category Body Results -->
+                <?php include_once 'includes/VC/bodyresults.php';?>
 
               </div>
-
-              <!-- Category Body Results -->
-              <?php include_once 'includes/VC/bodyresults.php';?>
-
             </div>
-          </div>
-
+          <?php } ?>
         </div>
       </section>
       <!-- End Category Section -->

@@ -1,4 +1,9 @@
-      <!-- Start Recommended Categories Section -->
+<?php
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CategoriaRepository.php';
+  $categoriaRepository = new CategoriaRepository();
+  $categorias = $categoriaRepository->listarTodosActivados();
+?>
+<!-- Start Recommended Categories Section -->
       <section>
         <div class="container px-4 px-lg-5 mt-5">
           <!-- Categories Recomended -->
@@ -18,63 +23,30 @@
               <div class="carousel-inner">
                 <!-- Carousel Content Item Active -->
                 <div class="carousel-item active">
-                  <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <a href="categoria.php"><img src="resources/images/Funeral/3funeral.png" alt=""></a><br><br>
-                          <a href="categoria.php" title="Categoría">
-                            <p>Categoría 1</p>
-                          </a>
+                  <?php foreach ($categorias as $categoria) { ?>
+                    <!-- Carousel Category Miniature-->
+                    <div class="col-sm-4">
+                      <div class="product-image-wrapper">
+                        <div class="single-products">
+                          <div class="productinfo text-center">
+                            <!-- TODO: agregar imagen -->
+                            <a href="categoria.php?id=<?php echo $producto['idCategoria'] ?>">
+                              <img src="resources/images/Funeral/3funeral.png" alt="">
+                            </a><br><br>
+                            <a href="categoria.php?id=<?php echo $producto['idCategoria'] ?>"
+                              title="<?php echo $producto['nombreCategoria'] ?>">
+                              <p><?php echo $producto['nombreCategoria'] ?></p>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <a href="categoria.php"><img src="resources/images/Ekibanas/3ekibanas.png" alt=""></a><br><br>
-                          <a href="categoria.php" title="Categoría">
-                            <p>Categoría</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <a href="categoria.php"><img src="resources/images/Ramos fruteros/7ramosfruteros.png" alt=""></a><br><br>
-                          <a href="categoria.php" title="Categoría">
-                            <p>Categoría</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <a href="categoria.php"><img src="resources/images/Bautizo/2bautizo.png" alt=""></a><br><br>
-                          <a href="categoria.php" title="Categoría">
-                            <p>Categoría</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <?php } ?>
                 </div>
                 <!-- Carousel Content Item -->
-                <div class="carousel-item">
+                <!-- <div class="carousel-item"> -->
                   <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
+                  <!-- <div class="col-sm-4">
                     <div class="product-image-wrapper">
                       <div class="single-products">
                         <div class="productinfo text-center">
@@ -85,34 +57,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <a href="categoria.php"><img src="resources/images/Primera Comunion/1pricom.png" alt=""></a><br><br>
-                          <a href="categoria.php" title="Categoría">
-                            <p>Categoría</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Carousel Category Miniature-->
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <a href="categoria.php"><img src="resources/images/Diseños especiales/3despeciales.png" alt=""></a><br><br>
-                          <a href="categoria.php" title="Categoría">
-                            <p>Categoría</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </div> -->
+                <!-- </div> -->
               </div>
               <!-- Carousel Button prev -->
               <a class="left recommended-item-control" href="#recommended-item-carousel1" role="bu"

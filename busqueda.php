@@ -11,7 +11,6 @@
 
   <!-- Head -->
   <?php include_once 'includes/VC/head.php'?>
-
 </head>
 
 <body>
@@ -65,7 +64,7 @@
             <div class="col-sm-9 padding-right">
 
               <!-- Search Body Results -->
-              <?php include_once 'includes/VC/bodyresults.php'?>
+              <?php include_once 'includes/VC/bodyresults.php' ?>
               
             </div>
 

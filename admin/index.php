@@ -1,3 +1,12 @@
+<?php
+  // TODO: hacer que esto esté bien y en todas la paginas
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/constantes/constantes.php';
+  @session_start();
+  if (!isset($_SESSION['tipoUsuarioId']) && $_SESSION['tipoUsuarioId'] != TU_ADMIN) {
+    header('Location: login.php');
+    exit;
+  }
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,7 +23,6 @@
 </head>
 
 <body class="sb-nav-fixed">
-
   <!-- Start Navbar Top -->
   <?php include_once 'includes/VA/navbartop.php'?>
   <!-- End Navbar Top -->
