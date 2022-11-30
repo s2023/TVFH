@@ -16,7 +16,6 @@
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
   <!-- <link href="resources/css/styles.css" rel="stylesheet"/> ???? copia de estilos de la tabla de admin  -->
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -59,7 +58,15 @@
       </header>
       <!-- End Header Article -->
 
-      <!-- Start List Orders Section -->
+      <?php
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/PedidoRepository.php';
+        @session_start();
+        $pedidoRepository = new PedidoRepository();
+        $pedidos = $pedidoRepository->listarPedidoPorUsuario($_SESSION['idUsuario']);
+      ?>
+
+      
+        <!-- Start List Orders Section -->
       <section>
         <div class="container">
           <div class="card mb-4">
@@ -71,6 +78,7 @@
 
             <!-- List Orders Body -->
             <div class="card-body">
+              <?php if (sizeof($pedidos) > 0) { ?>
               <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                 
                 <!-- Table Top -->
@@ -96,80 +104,56 @@
 
                 </div>
 
+                
+
                 <!-- Table Container -->
                 <div class="dataTable-container">
 
                   <table id="datatablesSimple" class="dataTable-table">
 
-                    <thead>                      
+                    <thead>
                       <tr>
-                        <th data-sortable="" style="width: 15.0672%;"><a href="#" class="dataTable-sorter">ID Pedido</a></th>
-                        <th data-sortable="" style="width: 15.0672%;"><a href="#" class="dataTable-sorter">Fecha Inicio</a></th>
-                        <th data-sortable="" style="width: 15.0672%;"><a href="#" class="dataTable-sorter">Fecha Entrega</a></th>
-                        <th data-sortable="" style="width: 15.0672%;"><a href="#" class="dataTable-sorter">Fecha Fin</a></th>
-                        <th data-sortable="" style="width: 15.0672%;"><a href="#" class="dataTable-sorter">Estado</a></th>
-                        <th data-sortable="" style="width: 11.3244%;"><a href="#" class="dataTable-sorter">Total</a></th>
-                        <th data-sortable="" style="width: 9.02111%;"><a href="#" class="dataTable-sorter">Ver</a></th>
-                        <!-- <th data-sortable="" style="width: 20.0576%;"><a href="#" class="dataTable-sorter">Plantilla 20%</a></th> -->
-                        <!-- <th data-sortable="" style="width: 29.0787%;"><a href="#" class="dataTable-sorter">Plantilla 29%</a></th> -->
+                        <th data-sortable="" style="width: 15.0672%;">
+                          <a href="#" class="dataTable-sorter">ID Pedido</a>
+                        </th>
+                        <th data-sortable="" style="width: 15.0672%;">
+                          <a href="#" class="dataTable-sorter">Fecha Inicio</a>
+                        </th>
+                        <th data-sortable="" style="width: 15.0672%;">
+                          <a href="#" class="dataTable-sorter">Fecha Entrega</a>
+                        </th>
+                        <th data-sortable="" style="width: 15.0672%;">
+                          <a href="#" class="dataTable-sorter">Fecha Fin</a>
+                        </th>
+                        <th data-sortable="" style="width: 15.0672%;">
+                          <a href="#" class="dataTable-sorter">Estado</a>
+                        </th>
+                        <th data-sortable="" style="width: 11.3244%;">
+                          <a href="#" class="dataTable-sorter">Total</a>
+                        </th>
+                        <th data-sortable="" style="width: 9.02111%;">
+                          <a href="#" class="dataTable-sorter">Ver</a>
+                        </th>
                       </tr>
                     </thead>
 
                     <tbody>
-                      <tr>
-                        <td>0000000001</td>
-                        <td>2022/10/05</td>
-                        <td>2022/10/06</td>
-                        <td>2022/10/06</td>
-                        <td>Finalizado</td>
-                        <td>$999.999</td>
-                        <td><a href="verpedido.php" title="Ver Pedido"><i class="fa-solid fa-money-check-dollar"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>0000000002</td>
-                        <td>2022/10/05</td>
-                        <td>2022/10/06</td>
-                        <td>----/--/--</td>
-                        <td>Pagado</td>
-                        <td>$999.999</td>
-                        <td><a href="verpedido.php" title="Ver Pedido"><i class="fa-solid fa-money-check-dollar"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>0000000003</td>
-                        <td>2022/10/05</td>
-                        <td>2022/10/06</td>
-                        <td>----/--/--</td>
-                        <td>Enviado</td>
-                        <td>$999.999</td>
-                        <td><a href="verpedido.php" title="Ver Pedido"><i class="fa-solid fa-money-check-dollar"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>0000000004</td>
-                        <td>2022/10/05</td>
-                        <td>2022/10/06</td>
-                        <td>2022/10/06</td>
-                        <td>Anulado</td>
-                        <td>$999.999</td>
-                        <td><a href="verpedido.php" title="Ver Pedido"><i class="fa-solid fa-money-check-dollar"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>0000000005</td>
-                        <td>2022/10/05</td>
-                        <td>2022/10/06</td>
-                        <td>2022/10/06</td>
-                        <td>Devuelto</td>
-                        <td>$999.999</td>
-                        <td><a href="verpedido.php" title="Ver Pedido"><i class="fa-solid fa-money-check-dollar"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>0000000006</td>
-                        <td>2022/10/05</td>
-                        <td>2022/10/06</td>
-                        <td>----/--/--<</td>
-                        <td>Creado</td>
-                        <td>$999.999</td>
-                        <td><a href="verpedido.php" title="Ver Pedido"><i class="fa-solid fa-money-check-dollar"></i></a></td>
-                      </tr>
+                      <?php foreach ($pedidos as $pedido) { ?>
+                        <tr>
+                          <td><?php echo $pedido['idPedido'] ?></td>
+                          <td><?php echo $pedido['fechaInicioPedido'] ?></td>
+                          <td><?php echo $pedido['fechaEntregaPedido'] ?></td>
+                          <td><?php echo $pedido['fechaFinPedido'] ?></td>
+                          <td><?php echo $pedido['nombreEstadoPedido'] ?></td>
+                          <td>$<?php echo $pedido['totalPedido'] ?></td>
+                          <td>
+                            <a href="verpedido.php?id=<?php echo $pedido['idPedido'] ?>"
+                              title="Ver Pedido">
+                              <i aria-hidden="true" class="fa-solid fa-money-check-dollar"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      <?php } ?>
                     </tbody>
                   
                   </table>
@@ -189,6 +173,11 @@
                 </div>
 
               </div>
+              <?php } else { ?>
+              <div class="alert alert-warning text-center">
+                No tienes pedidos
+              </div>
+              <?php } ?>
             </div>
 
           </div>

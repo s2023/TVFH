@@ -1,5 +1,5 @@
 <?php
-require_once '../../datos/repositorios/CiudadRepository.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CiudadRepository.php';
 
 $id = $_GET['id'];
 $repo = new CiudadRepository();

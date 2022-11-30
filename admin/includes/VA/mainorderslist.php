@@ -1,3 +1,8 @@
+<?php
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/PedidoRepository.php';
+  $pedidoRepository = new PedidoRepository();
+  $pedidos = $pedidoRepository->listarTodos();
+?>
       <!-- Start Main List Orders -->
       <main>
         
@@ -12,12 +17,13 @@
             <li class="breadcrumb-item active">Listar Pedidos</li>
           </ol>
           
+          <!-- TODO: check these signs -->
           <!-- Start Advise OK  -->
-          <?php include_once 'includes/VA/adviseok.php'?>
+          <?php //include_once 'includes/VA/adviseok.php'?>
           <!-- End Advise OK  -->
 
           <!-- Start Advise Error -->
-          <?php include_once 'includes/VA/adviseerror.php'?>
+          <?php //include_once 'includes/VA/adviseerror.php'?>
           <!-- End Advise Error -->
 
           <!-- Buttons Menu -->
@@ -45,112 +51,59 @@
 
                 <!-- Table Head -->
                 <thead>
-                  <tr>                    
+                  <tr>
                     <th>ID</th>
                     <th>ID Cliente</th>
                     <th>Apodo del Usuario</th>
                     <th>Total del Pedido</th>
                     <th>Fecha Inicio</th>
-                    <th>Fecha Entrega</th>                    
+                    <th>Fecha Entrega</th>
                     <th>Fecha Fin</th>
                     <th>Estado del Pedido</th>
                   </tr>
-                </thead>                
+                </thead>
 
                 <!-- Table Body -->
                 <tbody>
-
-                  <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>Apodo Usuario</td>
-                    <td>$999.999</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>28/09/2022 00:00:00</td>
-                    <td>---------- --------</td>                    
-                    <td>Creado</td>                  
-                    <td>
-                      <!-- Start Product Options Item-->
-                      <?php include 'includes/VA/orderoptions.php'?>
-                      <!-- End Product Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>9999999999</td>
-                    <td>Apodo Usuario</td>
-                    <td>$999.999</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>28/09/2022 00:00:00</td>
-                    <td>---------- --------</td>                    
-                    <td>Pagado</td>                  
-                    <td>
-                      <!-- Start Product Options Item-->
-                      <?php include 'includes/VA/orderoptions.php'?>
-                      <!-- End Product Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>9999999999</td>
-                    <td>Apodo Usuario</td>
-                    <td>$999.999</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>28/09/2022 00:00:00</td>
-                    <td>---------- --------</td>                    
-                    <td>Enviado</td>                  
-                    <td>
-                      <!-- Start Product Options Item-->
-                      <?php include 'includes/VA/orderoptions.php'?>
-                      <!-- End Product Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>9999999999</td>
-                    <td>Apodo Usuario</td>
-                    <td>$999.999</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>28/09/2022 00:00:00</td>
-                    <td>27/09/2022 00:00:00</td>                   
-                    <td>Anulado</td>                  
-                    <td>
-                      <!-- Start Product Options Item-->
-                      <?php include 'includes/VA/orderoptions.php'?>
-                      <!-- End Product Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>9999999999</td>
-                    <td>Apodo Usuario</td>
-                    <td>$999.999</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>28/09/2022 00:00:00</td>
-                    <td>28/09/2022 00:00:00</td>                  
-                    <td>Devuelto</td>                  
-                    <td>
-                      <!-- Start Product Options Item-->
-                      <?php include 'includes/VA/orderoptions.php'?>
-                      <!-- End Product Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>9999999999</td>
-                    <td>Apodo Usuario</td>
-                    <td>$999.999</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>                    
-                    <td>Finalizado</td>                  
-                    <td>
-                      <!-- Start Product Options Item-->
-                      <?php include 'includes/VA/orderoptions.php'?>
-                      <!-- End Product Options Item-->
-                    </td>
-                  </tr>
-                  
+                  <?php foreach ($pedidos as $pedido) { ?>
+                    <tr>
+                      <td><?php echo $pedido['idPedido'] ?></td>
+                      <td><?php echo $pedido['usuarioId'] ?></td>
+                      <td><?php echo $pedido['apodoUsuario'] ?></td>
+                      <td>$<?php echo $pedido['totalPedido'] ?></td>
+                      <td><?php echo $pedido['fechaInicioPedido'] ?></td>
+                      <td><?php echo $pedido['fechaEntregaPedido'] ?></td>
+                      <td><?php echo $pedido['fechaFinPedido'] ?></td>
+                      <td><?php echo $pedido['nombreEstadoPedido'] ?></td>
+                      <td>
+                        <!-- Start Order Options Item-->
+                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                          <li class="nav-item dropdown">
+                            <!-- Menu Button -->
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones Pedido">
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <!-- Menu List-->
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <!-- Order View Option -->
+                              <li>
+                                <a class="dropdown-item" href="orderview.php?id=<?php echo $pedido['idPedido'] ?>" title="Ver Pedido"><i class="fas fa-eye"></i> Ver Pedido</a>
+                              </li>
+                              <!-- Divider Menu -->
+                              <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <!-- Order Edit Option -->
+                              <li>
+                                <a class="dropdown-item" href="orderedit.php?id=<?php echo $pedido['idPedido'] ?>" title="Editar Pedido"><i class="fas fa-edit"></i> Editar Pedido</a>
+                              </li>                            
+                            </ul>
+                          </li>
+                        </ul>
+                        <!-- End Order Options Item-->
+                      </td>
+                    </tr>
+                  <?php } ?>
                 </tbody>
               
               </table>

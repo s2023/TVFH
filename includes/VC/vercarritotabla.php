@@ -3,7 +3,7 @@
 
               <!-- Order ID -->
               <div class="review-payment">
-                <h5>ID del Pedido #: <label>0000000001</label></h5>
+                <h5>ID del Pedido #: <label><?php echo $pedido->idPedido ?></label></h5>
               </div>
 
               <table class="table table-condensed">
@@ -20,73 +20,30 @@
                 </thead>
 
                 <tbody>
-                  <!-- Item -->
-                  <tr>
-                    <td class="cart_product">
-                      <img src="resources/images/Ekibanas/12ekibanas.png" alt="Img miniatura producto" title="">
-                    </td>
-                    <td class="cart_description">
-                      <h4><a href="producto.php" title="Nombre del Producto">Nombre del Producto</a></h4>
-                      <h6><a href="categoria.php" title="Categoría">Categoría</a></h6>
-                      <p>SKU: 0000000001</p>
-                    </td>
-                    <td class="cart_price">
-                      <p>$999.999</p>
-                    </td>
-                    <td class="cart_quantity">
-                      <div class="cart_quantity_button">                        
-                        <input disabled class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">                        
-                      </div>
-                    </td>
-                    <td class="cart_total">
-                      <p class="cart_total_price">$999.999</p>
-                    </td>
-                  </tr>
-                  <!-- Item -->
-                  <tr>
-                    <td class="cart_product">
-                      <img src="resources/images/Ramos fruteros/8ramosfruteros.png" alt="Img miniatura producto" title="">
-                    </td>
-                    <td class="cart_description">
-                      <h4><a href="producto.php" title="Nombre del Producto">Nombre del Producto</a></h4>
-                      <h6><a href="categoria.php" title="Categoría">Categoría</a></h6>
-                      <p>SKU: 0000000001</p>
-                    </td>
-                    <td class="cart_price">
-                      <p>$999.999</p>
-                    </td>
-                    <td class="cart_quantity">
-                      <div class="cart_quantity_button">                        
-                        <input disabled class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">                        
-                      </div>
-                    </td>
-                    <td class="cart_total">
-                      <p class="cart_total_price">$999.999</p>
-                    </td>
-                  </tr>
-                  <!-- Item -->
-                  <tr>
-                    <td class="cart_product">
-                      <img src="resources/images/Matrimonios/5matrimonio.png" alt="Img miniatura producto" title="">
-                    </td>
-                    <td class="cart_description">
-                      <h4><a href="producto.php" title="Nombre del Producto">Nombre del Producto</a></h4>
-                      <h6><a href="categoria.php" title="Categoría">Categoría</a></h6>
-                      <p>SKU: 0000000001</p>
-                    </td>
-                    <td class="cart_price">
-                      <p>$999.999</p>
-                    </td>
-                    <td class="cart_quantity">
-                      <div class="cart_quantity_button">                       
-                        <input disabled class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">                       
-                      </div>
-                    </td>
-                    <td class="cart_total">
-                      <p class="cart_total_price">$999.999</p>
-                    </td>
-                  </tr>    
-                  <tr>						
+                  <?php foreach ($detallesPedido as $detallePedido) { ?>
+                    <tr>
+                      <td class="cart_product">
+                        <!-- TODO: agregar imagen -->
+                        <img src="resources/images/Ekibanas/12ekibanas.png" alt="Img miniatura producto" title="">
+                      </td>
+                      <td class="cart_description">
+                        <h4><a href="producto.php?id=<?php echo $detallePedido->productoId ?>" title="Nombre del Producto"><?php echo $detallePedido->nombreProducto ?></a></h4>
+                        <h6><a href="categoria.php?id<?php echo $detallePedido->categoriaId ?>" title="Categoría"><?php echo $detallePedido->nombreCategoria ?></a></h6>
+                        <p>SKU: <?php echo $detallePedido->skuProducto ?></p>
+                      </td>
+                      <td class="cart_price">
+                        <p>$<?php echo $detallePedido->valorUnitarioProducto ?></p>
+                      </td>
+                      <td class="cart_quantity">
+                        <div class="cart_quantity_button">                        
+                          <input disabled class="cart_quantity_input" type="text" name="quantity" value="<?php echo $detallePedido->cantidadProducto ?>" autocomplete="off" size="2">                        
+                        </div>
+                      </td>
+                      <td class="cart_total">
+                        <p class="cart_total_price">$<?php echo $detallePedido->valorUnitarioProducto * $detallePedido->cantidadProducto ?></p>
+                      </td>
+                    </tr>
+                  <?php } ?>
                 </tbody>
 
               </table>

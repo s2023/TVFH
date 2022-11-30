@@ -31,7 +31,7 @@
                         </div>
                       </div>
                       <input disabled type="text" placeholder="Nombres de Facturación" title="Nombres de Facturación" maxlength="50"
-                        required>
+                        required value="<?php echo $usuario->nombresFacturacion ?>">
 
                       <!-- Form Billing Last Names -->
                       <div class="row">
@@ -43,7 +43,7 @@
                         </div>
                       </div>
                       <input disabled type="text" placeholder="Apellidos de Facturación" title="Apellidos de Facturación" maxlength="50"
-                        required>
+                        required value="<?php echo $usuario->apellidosFacturacion ?>">
 
                       <!-- Form Billing Document Type -->
                       <div class="row">
@@ -59,21 +59,23 @@
                         <option title="Tipo de Documento de Facturación">
                           -- Tipo de Documento de Facturación --
                         </option>
-                        <option title="Cédula de Ciudadanía">
-                          <span>
-                            CC - Cédula de Ciudadanía
-                          </span>
-                        </option>
-                        <option title="NIT - Número de Identificación Tributaria">
-                          <span>
-                            NIT - Número de Identificación Tributaria
-                          </span>
-                        </option>
-                        <!-- <option title="">
-                        <span>
-                          "" - ""
-                        </span>
-                      </option> -->
+                        <?php foreach ($tiposDeDocumento as $tipoDeDocumento) { ?>
+                          <?php if ($tipoDeDocumento['idTipoDocumento'] == $usuario->tipoDocumentoFacturacionId) { ?>
+                            <option title="<?php echo $tipoDeDocumento['nombreTipoDocumento'] ?>"
+                              value="<?php echo $tipoDeDocumento['idTipoDocumento'] ?>" selected>
+                              <?php
+                                echo $tipoDeDocumento['abvTipoDocumento'] . ' - ' . $tipoDeDocumento['nombreTipoDocumento']
+                              ?>
+                            </option>
+                          <?php } else { ?>
+                            <option title="<?php echo $tipoDeDocumento['nombreTipoDocumento'] ?>"
+                              value="<?php echo $tipoDeDocumento['idTipoDocumento'] ?>">
+                              <?php
+                                echo $tipoDeDocumento['abvTipoDocumento'] . ' - ' . $tipoDeDocumento['nombreTipoDocumento']
+                              ?>
+                            </option>
+                          <?php } ?>
+                        <?php } ?>
                       </select>
 
                       <!-- Form Billing Document Number -->
@@ -87,7 +89,8 @@
                       </div>
                       </div>
                       <input disabled type="text" placeholder="Número de Documento de Facturación"
-                      title="Número de Documento de Facturación" minlength="5" maxlength="30" required>
+                      title="Número de Documento de Facturación" minlength="5" maxlength="30" required
+                      value="<?php echo $usuario->numeroDocumentoFacturacion ?>">
 
                       <!-- Form Email -->
                       <div class="row">
@@ -99,7 +102,7 @@
                         </div>
                       </div>
                       <input disabled type="email" placeholder="E-mail de Facturación" title="E-mail de Facturación" maxlength="60"
-                        required>
+                        required value="<?php echo $usuario->correoElectronicoFacturacion ?>">
 
                     </div>
 
@@ -118,7 +121,7 @@
                       </div>
                       <input disabled type="tel" placeholder="Teléfono de Facturación"
                         title="Teléfono de Facturación"
-                        minlength="5" maxlength="20" required>
+                        minlength="5" maxlength="20" required value="<?php echo $usuario->numeroTelefonoFacturacion ?>">
 
                       <!-- Data Billing Address -->
                       <div class="row">
@@ -130,7 +133,7 @@
                         </div>
                       </div>
                       <input disabled type="text" placeholder="Dirección de Facturación" title="Dirección de Facturación" maxlength="60"
-                        required>
+                        required value="<?php echo $usuario->direccionFacturacion ?>">
 
                       <!-- Data Billing Country -->
                       <div class="row">
@@ -146,21 +149,23 @@
                         <option title="País de Facturación">
                           -- País de Facturación --
                         </option>
-                        <option title="Colombia">
-                          <span>
-                            Colombia
-                          </span>
-                        </option>
-                        <option title="Ecuadora">
-                          <span>
-                            Ecuador
-                          </span>
-                        </option>
-                        <!-- <option title="">
-                        <span>
-                          ""
-                        </span>
-                      </option> -->
+                        <?php foreach ($paisesFacturacion as $pais) { ?>
+                          <?php if ($pais['idPais'] == $paisFacturacion->idPais) { ?>
+                            <option title="<?php echo $pais['nombrePais'] ?>"
+                              value="<?php echo $pais['idPais'] ?>" selected>
+                              <?php
+                                echo $pais['nombrePais']
+                              ?>
+                            </option>
+                          <?php } else { ?>
+                            <option title="<?php echo $pais['nombrePais'] ?>"
+                              value="<?php echo $pais['idPais'] ?>">
+                              <?php
+                                echo $pais['nombrePais']
+                              ?>
+                            </option>
+                          <?php } ?>
+                        <?php } ?>
                       </select>
 
                       <!-- Data Billing Department/Region/Province -->
@@ -177,26 +182,23 @@
                         <option title=">Departamento/Provincia/Región de Facturación">
                           -- Departamento/Provincia/Región de Facturación --
                         </option>
-                        <option title="Bogotá D.C.">
-                          <span>
-                            Bogotá D.C.
-                          </span>
-                        </option>
-                        <option title="Cundinamarca">
-                          <span>
-                            Cundinamarca
-                          </span>
-                        </option>
-                        <option title="Boyacá">
-                          <span>
-                            Boyacá
-                          </span>
-                        </option>
-                        <!-- <option title="">
-                        <span>
-                          "" - ""
-                        </span>
-                      </option> -->
+                        <?php foreach ($depProvRegsFacturacion as $depProvReg) { ?>
+                          <?php if ($depProvReg['idDepProvReg'] == $depProvRegFacturacion->idDepProvReg) { ?>
+                            <option title="<?php echo $depProvReg['nombreDepProvReg'] ?>"
+                              value="<?php echo $depProvReg['idDepProvReg'] ?>" selected>
+                              <?php
+                                echo $depProvReg['nombreDepProvReg']
+                              ?>
+                            </option>
+                          <?php } else { ?>
+                            <option title="<?php echo $depProvReg['nombreDepProvReg'] ?>"
+                              value="<?php echo $depProvReg['idDepProvReg'] ?>">
+                              <?php
+                                echo $depProvReg['nombreDepProvReg']
+                              ?>
+                            </option>
+                          <?php } ?>
+                        <?php } ?>
                       </select>
 
                       <!-- Data Billing City -->
@@ -213,19 +215,26 @@
                         <option title="Ciudad de Facturación">
                           -- Ciudad de Facturación --
                         </option>
-                        <option title="Bogotá D.C.">
-                          <span>
-                            Bogotá D.C.
-                          </span>
-                        </option>                        
-                        <!-- <option title="">
-                        <span>
-                          "" - ""
-                        </span>
-                      </option> -->
+                        <?php foreach ($ciudadesFacturacion as $ciudad) { ?>
+                          <?php if ($ciudad['idCiudad'] == $ciudadFacturacion->idCiudad) { ?>
+                            <option title="<?php echo $ciudad['nombreCiudad'] ?>"
+                              value="<?php echo $ciudad['idCiudad'] ?>" selected>
+                              <?php
+                                echo $ciudad['nombreCiudad']
+                              ?>
+                            </option>
+                          <?php } else { ?>
+                            <option title="<?php echo $ciudad['nombreCiudad'] ?>"
+                              value="<?php echo $ciudad['idCiudad'] ?>">
+                              <?php
+                                echo $ciudad['nombreCiudad']
+                              ?>
+                            </option>
+                          <?php } ?>
+                        <?php } ?>
                       </select>
 
-                    </div>              
+                    </div>
 
                   </div>
                 </div>
@@ -249,7 +258,7 @@
                       </div>
                     </div>
                     <input disabled type="text" placeholder="Nombres de Envío" title="Nombres de Envío" maxlength="50"
-                      required>
+                      required value="<?php echo $usuario->nombresEnvio ?>">
 
                     <!-- Form Shipping Last Names -->
                     <div class="row">
@@ -261,7 +270,7 @@
                       </div>
                     </div>
                     <input disabled type="text" placeholder="Apellidos de Envío" title="Apellidos de Envío" maxlength="50"
-                      required>
+                      required value="<?php echo $usuario->apellidosEnvio ?>">
 
                     <!-- Data Shipping Phone -->
                     <div class="row">
@@ -275,19 +284,19 @@
                     </div>
                     <input disabled type="tel" placeholder="Teléfono de Envío"
                       title="Teléfono de Envío."
-                      minlength="5" maxlength="20" required>
+                      minlength="5" maxlength="20" required value="<?php echo $usuario->numeroTelefonoEnvio ?>">
 
                     <!-- Data Shipping Address -->
                     <div class="row">
                       <div class="col-12">
-                        <div class="d-flex">                            
+                        <div class="d-flex">
                           <i style="margin-right: 10px" class="fa-solid fa-address-card" title="Dirección de Envío"></i>
                           <h6>Dirección de Envío</h6>
                         </div>
                       </div>
                     </div>
                     <input disabled type="text" placeholder="Dirección de Envío" title="Dirección de Envío" maxlength="60"
-                      required>
+                      required value="<?php echo $usuario->direccionEnvio ?>">
 
                     <!-- Data Shipping Country -->
                     <div class="row">
@@ -303,21 +312,23 @@
                       <option title="País de Envío">
                         -- País de Envío --
                       </option>
-                      <option title="Colombia">
-                        <span>
-                          Colombia
-                        </span>
-                      </option>
-                      <option title="Ecuadora">
-                        <span>
-                          Ecuador
-                        </span>
-                      </option>
-                      <!-- <option title="">
-                      <span>
-                        ""
-                      </span>
-                    </option> -->
+                      <?php foreach ($paisesEnvio as $pais) { ?>
+                        <?php if ($pais['idPais'] == $paisEnvio->idPais) { ?>
+                          <option title="<?php echo $pais['nombrePais'] ?>"
+                            value="<?php echo $pais['idPais'] ?>" selected>
+                            <?php
+                              echo $pais['nombrePais']
+                            ?>
+                          </option>
+                        <?php } else { ?>
+                          <option title="<?php echo $pais['nombrePais'] ?>"
+                            value="<?php echo $pais['idPais'] ?>">
+                            <?php
+                              echo $pais['nombrePais']
+                            ?>
+                          </option>
+                        <?php } ?>
+                      <?php } ?>
                     </select>
 
                     <!-- Data Shipping Department/Region/Province -->
@@ -334,26 +345,23 @@
                       <option title=">Departamento/Provincia/Región de Envío">
                         -- Departamento/Provincia/Región de Envío --
                       </option>
-                      <option title="Bogotá D.C.">
-                        <span>
-                          Bogotá D.C.
-                        </span>
-                      </option>
-                      <option title="Cundinamarca">
-                        <span>
-                          Cundinamarca
-                        </span>
-                      </option>
-                      <option title="Boyacá">
-                        <span>
-                          Boyacá
-                        </span>
-                      </option>
-                      <!-- <option title="">
-                      <span>
-                        "" - ""
-                      </span>
-                    </option> -->
+                      <?php foreach ($depProvRegsEnvio as $depProvReg) { ?>
+                        <?php if ($depProvReg['idDepProvReg'] == $depProvRegEnvio->idDepProvReg) { ?>
+                          <option title="<?php echo $depProvReg['nombreDepProvReg'] ?>"
+                            value="<?php echo $depProvReg['idDepProvReg'] ?>" selected>
+                            <?php
+                              echo $depProvReg['nombreDepProvReg']
+                            ?>
+                          </option>
+                        <?php } else { ?>
+                          <option title="<?php echo $depProvReg['nombreDepProvReg'] ?>"
+                            value="<?php echo $depProvReg['idDepProvReg'] ?>">
+                            <?php
+                              echo $depProvReg['nombreDepProvReg']
+                            ?>
+                          </option>
+                        <?php } ?>
+                      <?php } ?>
                     </select>
 
                     <!-- Data Shipping City -->
@@ -370,16 +378,23 @@
                       <option title="Ciudad de Envío">
                         -- Ciudad de Envío --
                       </option>
-                      <option title="Bogotá D.C.">
-                        <span>
-                          Bogotá D.C.
-                        </span>
-                      </option>                        
-                      <!-- <option title="">
-                      <span>
-                        "" - ""
-                      </span>
-                    </option> -->
+                      <?php foreach ($ciudadesEnvio as $ciudad) { ?>
+                        <?php if ($ciudad['idCiudad'] == $ciudadEnvio->idCiudad) { ?>
+                          <option title="<?php echo $ciudad['nombreCiudad'] ?>"
+                            value="<?php echo $ciudad['idCiudad'] ?>" selected>
+                            <?php
+                              echo $ciudad['nombreCiudad']
+                            ?>
+                          </option>
+                        <?php } else { ?>
+                          <option title="<?php echo $ciudad['nombreCiudad'] ?>"
+                            value="<?php echo $ciudad['idCiudad'] ?>">
+                            <?php
+                              echo $ciudad['nombreCiudad']
+                            ?>
+                          </option>
+                        <?php } ?>
+                      <?php } ?>
                     </select>
 
                     <label><input disabled class="mt-5" type="checkbox">

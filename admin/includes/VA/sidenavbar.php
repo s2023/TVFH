@@ -1,3 +1,6 @@
+<?php
+  @session_start();
+?>
     <!-- Start SideNav Bar -->
     <div id="layoutSidenav_nav">
 
@@ -78,7 +81,7 @@
         <!-- Sidenav Footer -->
         <div class="sb-sidenav-footer">
           <div class="small">Inició sesión como:</div>
-          apodoUsuario
+          <?php echo isset($_SESSION['apodoUsuario']) ? $_SESSION['apodoUsuario'] : "apodoUsuario" ?>
         </div>
       
       </nav>

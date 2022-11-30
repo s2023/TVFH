@@ -56,4 +56,25 @@ class DetallePedidoRepository extends AbstractRepository
     public function eliminar($id): void
     {
     }
+
+    public function listarDetallesPorPedidoId(int $id): array
+    {
+        try {
+            $sql = "SELECT dp.*, pr.*, c.* " .
+                "FROM $this->tabla AS dp " .
+                "INNER JOIN tblproducto AS pr ON dp.productoId = pr.idProducto " .
+                "INNER JOIN tblcategoria AS c ON pr.categoriaId = c.idCategoria " .
+                "WHERE dp.pedidoId = $id";
+            $consulta = $this->db->query($sql);
+            $resultado = array();
+
+            while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
+                array_push($resultado, $fila);
+            }
+
+            return $resultado;
+        } catch (Exception $e) {
+            $this->manejarExcepcion($e);
+        }
+    }
 }

@@ -88,7 +88,9 @@
                   <i class="fa fa-right-from-bracket fa-6x"></i>
                 </div> 
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="text-white stretched-link" href="login.php" title="Cerrar Sesión">Cerrar Sesión</a>
+                  <a class="text-white stretched-link" href="acciones/cerrarsesion.php" title="Cerrar Sesión">
+                    Cerrar Sesión
+                  </a>
                   <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
               </div>

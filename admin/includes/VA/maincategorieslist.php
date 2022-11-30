@@ -1,3 +1,8 @@
+<?php
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/datos/repositorios/CategoriaRepository.php';
+  $categoriaRepository = new CategoriaRepository();
+  $categorias = $categoriaRepository->listarTodos();
+?>
       <!-- Start Main List Categories -->
       <main>
         
@@ -12,12 +17,13 @@
             <li class="breadcrumb-item active">Listar Categorías</li>
           </ol>
 
+          <!-- TODO: check this -->
           <!-- Start Advise OK  -->
-          <?php include_once 'includes/VA/adviseok.php'?>
+          <?php //include_once 'includes/VA/adviseok.php'?>
           <!-- End Advise OK  -->
 
           <!-- Start Advise Error Article-->
-          <?php include_once 'includes/VA/adviseerror.php'?>
+          <?php //include_once 'includes/VA/adviseerror.php'?>
           <!-- End Advise Error Article-->
 
           <!-- Buttons Menu -->
@@ -45,7 +51,7 @@
 
                 <!-- Table Head -->
                 <thead>
-                  <tr>                    
+                  <tr>
                     <th>ID</th>
                     <th>Imagen</th>
                     <th>Nombre de Categoría</th>
@@ -56,183 +62,68 @@
                     <th>Total Productos</th>
                     <th>Opciones</th>
                   </tr>
-                </thead>                
+                </thead>
 
                 <!-- Table Body -->
                 <tbody>
-
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Bautizo/10bautizo.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>1</td>
-                    <td>
-                      <!-- Start Category Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Category Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Caja de Rosas/9cdrosas.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre de 30 caracteres Flores</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>Eliminada</td>
-                    <td>0</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Bouquet/4bouquet.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>                  
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Matrimonios/1matrimonio.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Funeral/3funeral.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>                  
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Ramos Fruteros/10ramosfruteros.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Diseños especiales/4despeciales.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>                  
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Ekibanas/7ekibanas.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Primera Comunion/1pricom.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Activada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>                  
-                  <tr>
-                    <td>9999999999</td>
-                    <td>
-                      <img id="imgtable" src="../resources/images/Matrimonios/4matrimonio.png" alt="Imagen Categoría" title="Imagen Categoría">
-                    </td>
-                    <td>Nombre Categoría</td>
-                    <td>Nombre Categoría</td>
-                    <td>27/09/2022 00:00:00</td>
-                    <td>---------- --------</td>
-                    <td>Desactivada</td>
-                    <td>9999999999</td>
-                    <td>
-                      <!-- Start Options Item-->
-                      <?php include 'includes/VA/categoryoptions.php'?>
-                      <!-- End Options Item-->
-                    </td>
-                  </tr>
-                
+                  <?php foreach ($categorias as $categoria) { ?>
+                    <tr>
+                      <td><?php echo $categoria['idCategoria'] ?></td>
+                      <td>
+                        <!-- TODO: poner imagen -->
+                        <img id="imgtable" src="../resources/images/Bautizo/10bautizo.png" alt="Imagen Categoría" title="Imagen Categoría">
+                      </td>
+                      <td><?php echo $categoria['nombreCategoria'] ?></td>
+                      <td><?php echo $categoria['categoriaPadre'] ?></td>
+                      <td><?php echo $categoria['fechaAltaCategoria'] ?></td>
+                      <td><?php echo $categoria['fechaBajaCategoria'] ?></td>
+                      <td><?php echo $categoria['nombreEstadoCategoria'] ?></td>
+                      <td><?php echo $categoria['totalProductos'] ?></td>
+                      <td>
+                        <!-- Start Category Options Item-->
+                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                          <li class="nav-item dropdown">
+                            <!-- Menu Button -->
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones Categoría">
+                              <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <!-- Menu List-->
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <!-- Category View Option -->
+                              <li>
+                                <a class="dropdown-item" href="../categoria.php?id=<?php echo $categoria['idCategoria'] ?>" target="_blank" title="Ver Categoría"><i class="fas fa-eye"></i> Ver Categoría</a>
+                              </li>
+                              <!-- Category Edit Option -->
+                              <li>
+                                <a class="dropdown-item" href="categoryedit.php?id=<?php echo $categoria['idCategoria'] ?>" title="Editar Categoría"><i class="fas fa-edit"></i> Editar Categoría</a>
+                              </li>
+                              <!-- Divider Menu -->
+                              <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <!-- Category Activate Option -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Activar Categoría"><i class="fas fa-check-square"></i> Activar Categoría</a>
+                              </li>
+                              <!-- Category Deactivate Option  -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Desactivar Categoría"><i class="fas fa-ban"></i> Desactivar Categoría</a>
+                              </li>
+                              <!-- Category Duplicate Option  -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Duplicar Categoría"><i class="fas fa-clone"></i> Duplicar Categoría</a>
+                              </li>
+                              <!-- Category Eliminate Option  -->
+                              <li>
+                                <a class="dropdown-item" href="#" title="Eliminar Categoría"><i class="fas fa-trash"></i> Eliminar Categoría</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <!-- End Category Options Item-->
+                      </td>
+                    </tr>
+                  <?php } ?>
                 </tbody>
               
               </table>

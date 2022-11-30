@@ -1,13 +1,13 @@
 function getDepRegProv(id, callback) {
-    $.get('/tvfh/api/DepRegProv/get.php?id=' + id, (data) => {
-        data = JSON.parse(data);
+    $.get('/tvfh/api/DepProvReg/get.php?id=' + id, (json) => {
+        const data = JSON.parse(json);
         callback(data);
     });
 }
 
 function getCiudades(id, callback) {
-    $.get('/tvfh/api/Ciudad/get.php?id=' + id, (data) => {
-        data = JSON.parse(data);
+    $.get('/tvfh/api/Ciudad/get.php?id=' + id, (json) => {
+        const data = JSON.parse(json);
         callback(data);
     });
 }

@@ -35,24 +35,6 @@ class Conexion
                 $conexion = new PDO('mysql:host=' . self::$host . ';dbname=' . self::$db, self::$user, self::$password);
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $conexion->EXEC("SET CHARACTER SET UTF8");
-
-                // TODO: remove this
-                if (false) {
-                    $query = $conexion->query("");
-                    $query->execute();
-                    $obj = $query->fetchObject();
-
-
-                    $sp = $conexion->prepare("CALL sdfsfd(?,?)");
-                    $x = 0;
-                    $sp->bindValue(++$x, 1, PDO::PARAM_INT);
-                    $sp->bindValue(++$x, "1", PDO::PARAM_STR);
-                    // $sp->bindValue(++$x, "1", PDO::PARAM_);
-                    $sp->execute();
-                    $all = $sp->fetchAll(PDO::FETCH_ASSOC);
-                    $first = $sp->fetchObject();
-                }
-
                 self::$conexion = $conexion;
             }
 

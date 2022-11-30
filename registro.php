@@ -29,7 +29,7 @@
       <section class="container mt-4">
         <div class="row">
           <div class="btn-group btn-breadcrumb">
-            <a href="index.php" class="btn btn-default"><i class="fa-solid fa-house"></i></a>
+            <a href="index.php" class="btn btn-default"><i aria-hidden="true" class="fa-solid fa-house"></i></a>
             <a href="registro.php" class="btn btn-default">Registro de Usuario</a>
           </div>
         </div>
@@ -61,26 +61,28 @@
           <div class="register-req">
             <p>
               Bienvenido a Florideas Holanda. Para poder realizar compras en la tienda virtual, por favor registrese
-              como nuevo usuario si aún no lo ha hecho. Los datos de <b>Facturación</b> y <b>Envío</b> los podrá
-              modificar al momento de realizar un nuevo pedido. <b>Todos los campos son obligatorios.</b>
+              como nuevo usuario si aún no lo ha hecho. Los datos de <strong>Facturación</strong> y
+              <strong>Envío</strong> los podrá modificar al momento de realizar un nuevo pedido.
+              <strong>Todos los campos son obligatorios.</strong>
             </p>
           </div>
 
           <!-- Registration Form -->
           <?php include_once 'includes/VC/registrationuserform.php'?>
 
-        </div>        
+        </div>
       </section>
       <!-- End Registration Section -->
 
     </article>
     <!-- End Article: Registration -->
 
+    <!-- TODO: quitar esto -->
     <!-- Link de ejemplo para ir a registro 2 -->
-    <div class="text-center">
+    <!-- <div class="text-center">
       <br>
       <a href="autenticacion.php" title="Registro 2">Link de ejemplo para ir a registro 2</a>
-    </div>
+    </div> -->
 
   </main>
 
@@ -89,6 +91,8 @@
 
   <!-- SCRIPTS -->
   <?php include_once 'includes/VC/scripts.php'?>
+  <script src="resources/js/app/pais-depregprov-ciudad.js"></script>
+  <script src="resources/js/app/usuario-pdc.js"></script>
 
 </body>
 

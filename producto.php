@@ -11,7 +11,6 @@
 
   <!-- Head -->
   <?php include_once 'includes/VC/head.php'?>
-
 </head>
 
 <body>
@@ -29,7 +28,7 @@
       <section class="container mt-4">
         <div class="row">
           <div class="btn-group btn-breadcrumb">
-            <a href="index.php" class="btn btn-default"><i class="fa-solid fa-house"></i></a>
+            <a href="index.php" class="btn btn-default"><i aria-hidden="true" class="fa-solid fa-house"></i></a>
             <a href="ocasiones.php" class="btn btn-default">Ocasiones</a>
             <a href="categoria.php" class="btn btn-default">Categoría</a>
             <a href="producto.php" class="btn btn-default">Producto</a>

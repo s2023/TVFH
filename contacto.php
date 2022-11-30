@@ -69,7 +69,7 @@
               <!-- Form Contact -->
               <div style="width: 150%" class="row">
                 <div class="col-md-8">
-                  <form action="row">
+                  <form action="index.php">
                     <div class="contact_form-container">
                       <div>
                         <div>

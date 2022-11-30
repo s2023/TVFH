@@ -20,17 +20,17 @@
                 <!-- Body Login -->
                 <div class="card-body">
                   
-                  <form action="">
+                  <form action="acciones/iniciarsesion.php" method="post">
 
                     <!-- Nickname Input -->
                     <div class="form-floating mb-3">
-                      <input class="form-control" id="inputEmail" type="text" placeholder="Apodo o E-mail Usuario" title="Apodo o E-mail Usuario" required>
+                      <input class="form-control" id="inputEmail" name="inputEmail" type="text" placeholder="Apodo o E-mail Usuario" title="Apodo o E-mail Usuario" required>
                       <label for="inputEmail">Apodo o E-mail Usuario</label>
                     </div>
 
                     <!-- Password Input -->
                     <div class="form-floating mb-3">
-                      <input class="form-control" id="inputPassword" type="password" placeholder="Contraseña" title="Contraseña" required>
+                      <input class="form-control" id="inputPassword" name="inputPassword" type="password" placeholder="Contraseña" title="Contraseña" required>
                       <label for="inputPassword">Contraseña</label>
                     </div>
 

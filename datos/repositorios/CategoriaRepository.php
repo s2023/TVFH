@@ -1,5 +1,6 @@
 <?php
 require_once 'AbstractRepository.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tvfh/constantes/constantes.php';
 
 class CategoriaRepository extends AbstractRepository
 {
@@ -79,7 +80,46 @@ class CategoriaRepository extends AbstractRepository
         }
     }
 
-    public function buscarPorId($id): object | null
+    public function listarTodos(): array
+    {
+        try {
+            $sql = "SELECT c.*, ec.*, " .
+            "(SELECT nombreCategoria FROM $this->tabla WHERE $this->id = c.padreCategoriaId LIMIT 1) as categoriaPadre, " .
+            "(SELECT COUNT(*) FROM tblproducto WHERE categoriaId = c.idCategoria LIMIT 1) as totalProductos " .
+            "FROM $this->tabla as c " .
+            "INNER JOIN tblestadocategoria AS ec ON c.estadoCategoriaId = ec.idEstadoCategoria";
+            $consulta = $this->db->query($sql);
+
+            while ($filas = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                $this->todos[] = $filas;
+            }
+
+            return $this->todos;
+        } catch (Exception $e) {
+            $this->manejarExcepcion($e);
+        }
+    }
+
+    public function listarTodosActivados(): array
+    {
+        try {
+            $nombreCol = "nombreCategoria";
+            $estadoCatCol = "estadoCategoriaId";
+            $estado = EC_ACTIVADA;
+            $sql = "SELECT * FROM $this->tabla WHERE $estadoCatCol = $estado ORDER BY $nombreCol";
+            $consulta = $this->db->query($sql);
+
+            while ($filas = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                $this->todos[] = $filas;
+            }
+
+            return $this->todos;
+        } catch (Exception $e) {
+            $this->manejarExcepcion($e);
+        }
+    }
+
+    public function buscarPorId($id): object|null
     {
         try {
             $sp = $this->db->prepare("CALL $this->paVer(?)");
