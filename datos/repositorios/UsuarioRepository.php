@@ -191,7 +191,6 @@ class UsuarioRepository extends AbstractRepository
     {
         try {
             $sql = "SELECT u.* FROM $this->tabla AS u " .
-                //"INNER JOIN" . // TODO: check if an inner join is needed
                 "WHERE (apodoUsuario = '$usuario' OR correoElectronicoUsuario = '$usuario') " .
                 "AND contraseñaUsuario = '$clave' AND tipoUsuarioId = $this->clienteId " .
                 "AND estadoUsuarioId = $this->usuarioActivoId LIMIT 1";
@@ -217,7 +216,6 @@ class UsuarioRepository extends AbstractRepository
     {
         try {
             $sql = "SELECT u.* FROM $this->tabla AS u " .
-            //"INNER JOIN" . // TODO: check if an inner join is needed
             "WHERE (apodoUsuario = '$usuario' OR correoElectronicoUsuario = '$usuario') " .
             "AND contraseñaUsuario = '$clave' AND tipoUsuarioId = $this->adminId " .
             "AND estadoUsuarioId = $this->usuarioActivoId LIMIT 1";

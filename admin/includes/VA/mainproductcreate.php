@@ -13,16 +13,17 @@
             <li class="breadcrumb-item active">Crear Producto</li>
           </ol>
 
+          <!-- TODO: revisar estos avisos -->
           <!-- Start Advise Draft -->
-          <?php include_once 'includes/VA/advisedraft.php'?>
+          <?php //include_once 'includes/VA/advisedraft.php'?>
           <!-- End Advise Draft -->
 
           <!-- Start Advise OK  -->
-          <?php include_once 'includes/VA/adviseok.php'?>
+          <?php //include_once 'includes/VA/adviseok.php'?>
           <!-- End Advise OK  -->
 
           <!-- Start Advise Error Article-->
-          <?php include_once 'includes/VA/adviseerror.php'?>
+          <?php //include_once 'includes/VA/adviseerror.php'?>
           <!-- End Advise Error Article-->
 
           <!-- Start Product Create Form -->

@@ -94,7 +94,8 @@ class ProductoRepository extends AbstractRepository
                 "FROM $this->tabla AS p " .
                 "INNER JOIN tblcategoria AS c ON c.idCategoria = p.categoriaId " .
                 "INNER JOIN tblvisibilidadproducto AS vp ON vp.idVisibilidadProducto = p.visibilidadProductoId " .
-                "INNER JOIN tblestadoproducto AS ep ON ep.idEstadoProducto = p.estadoProductoId";
+                "INNER JOIN tblestadoproducto AS ep ON ep.idEstadoProducto = p.estadoProductoId " .
+                "ORDER BY p.idProducto";
             $consulta = $this->db->query($sql);
 
             while ($filas = $consulta->fetch(PDO::FETCH_ASSOC)) {

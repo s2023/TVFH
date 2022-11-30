@@ -19,7 +19,7 @@
           
           <!-- TODO: check signs -->
           <!-- Start Advise OK  -->
-          <?php //include_once 'includes/VA/adviseok.php'?>
+          <?php if (isset($_GET['success']) && $_GET['success'] == 'true') include_once 'includes/VA/adviseok.php'?>
           <!-- End Advise OK  -->
 
           <!-- Start Advise Error -->
