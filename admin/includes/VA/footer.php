@@ -16,6 +16,9 @@
               <a href="#" data-toggle="modal" data-target="#myModal2" title="Mapa del Sitio">Mapa del Sitio</a>                
               <!-- Modal Sitemap -->
               <?php include_once 'includes/VA/modal-sitemap.php'?>
+              
+              &middot; 
+              <a>Florideas Holanda</a>
 
             </div>
           </div>

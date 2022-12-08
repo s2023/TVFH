@@ -28,17 +28,17 @@
                 </button>
 
                 <!-- TODO: no usar este -->
-                <!-- <button name="Botón Guardar y permanecer" class="btn btn-danger btn-circle" type="button"
+                <button name="Botón Guardar y permanecer" class="btn btn-danger btn-circle" type="button"
                   value="Guardar y permanecer" onclick="location.href='" href="#" title="Guardar y permanecer">
                   <i class="fas fa-save"></i>
-                </button> -->
+                </button>
 
                 <!-- TODO: no usar este -->
                 <!-- Lo dejé como anchor para que funcionara el target="_blank", no se como es pa button -->
-                <!-- <a name="Botón Vista previa" class="btn btn-danger btn-circle" 
+                <a name="Botón Vista previa" class="btn btn-danger btn-circle" 
                   value="Vista previa" href="../producto.php" target="_blank" title="Vista previa">
                   <i class="fas fa-search"></i>
-                </a> -->
+                </a>
 
               </div>
             </div>
