@@ -26,6 +26,7 @@
           <?php //include_once 'includes/VA/adviseerror.php'?>
           <!-- End Advise Error -->
 
+          <!-- Plantilla botom -->
           <!-- Buttons Menu -->
           <!-- <div class="card mb-4">
             <div class="card-body">
@@ -60,6 +61,7 @@
                     <th>Fecha Entrega</th>
                     <th>Fecha Fin</th>
                     <th>Estado del Pedido</th>
+                    <th>Opciones</th>
                   </tr>
                 </thead>
 

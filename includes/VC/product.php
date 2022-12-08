@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
           }
         ?>
         <h4><?php echo $producto->nombreProducto ?></h4>
-        <a href="categoria.html?id=<?php echo $producto->categoriaId ?>">
+        <a href="categoria.php?id=<?php echo $producto->categoriaId ?>">
           <h5>Categoria: <?php echo $producto->nombreCategoria ?></h5>
         </a>
         <p>SKU: <?php echo $producto->skuProducto ?></p>
